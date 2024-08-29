@@ -1,0 +1,27 @@
+.circle {
+	transform-style: preserve-3d;
+	animation: animate 8s linear infinite;
+}
+
+.circleItem {
+	left: calc(50% - 8rem);
+	height: 32rem;
+	width: 16rem;
+}
+
+.circle .circleItem {
+	position: absolute;
+	transform-style: preserve-3d;
+	transform-origin: center;
+	/* transform: rotateY(12deg); */
+	transform: translateZ(250px);
+}
+
+@keyframes animate {
+	0% {
+		transform: perspective(1000px) rotateY(360deg) rotateX(-15deg);
+	}
+	100% {
+		transform: perspective(1000px) rotateY(0deg) rotateX(-15deg);
+	}
+}
