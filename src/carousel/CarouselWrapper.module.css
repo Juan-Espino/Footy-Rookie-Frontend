@@ -1,31 +1,72 @@
-.circleItem {
-	animation: orbit 6s linear infinite;
+.rotate {
+	animation: circle 20s infinite linear;
+	transform-origin: 50% 50%;
+}
+.counterrotate {
+	animation: ccircle 20s infinite linear;
 }
 
 @keyframes orbit {
 	0% {
-		transform: rotate(0deg) translateX(5px) translateY(120px) rotate(0deg)
-			scale(1);
+		transform: rotate(0deg) translateX(1%) translateY(30%) rotate(0deg)
+			scale(0.75);
+		opacity: 1;
+		z-index: 100;
+	}
+	25% {
+		transform: rotate(90deg) translateX(1%) translateY(30%) rotate(-90deg)
+			scale(0.75);
+		opacity: 0.75;
+		z-index: 50;
+	}
+	50% {
+		transform: rotate(180deg) translateX(1%) translateY(30%) rotate(-180deg)
+			scale(0.5);
+		opacity: 0.3;
+		z-index: 0;
+	}
+	75% {
+		transform: rotate(270deg) translateX(1%) translateY(30%) rotate(-270deg)
+			scale(0.75);
+		opacity: 0.75;
+		z-index: 50;
+	}
+	100% {
+		transform: rotate(360deg) translateX(1%) translateY(30%) rotate(-360deg)
+			scale(0.75);
+		opacity: 1;
+		z-index: 100;
+	}
+}
+
+@keyframes circle {
+	from {
+		transform: rotateZ(0deg);
+	}
+	to {
+		transform: rotateZ(360deg);
+	}
+}
+
+@keyframes ccircle {
+	0% {
+		transform: rotateZ(360deg) scale(1);
 		opacity: 1;
 	}
 	25% {
-		transform: rotate(90deg) translateX(5px) translateY(120px) rotate(-90deg)
-			scale(0.75);
+		transform: rotateZ(270deg) scale(0.75);
 		opacity: 0.75;
 	}
 	50% {
-		transform: rotate(180deg) translateX(5px) translateY(120px) rotate(-180deg)
-			scale(0.6);
-		opacity: 0.6;
+		transform: rotateZ(180deg) scale(0.5);
+		opacity: 0.5;
 	}
 	75% {
-		transform: rotate(270deg) translateX(5px) translateY(120px) rotate(-270deg)
-			scale(0.75);
+		transform: rotateZ(90deg) scale(0.75);
 		opacity: 0.75;
 	}
 	100% {
-		transform: rotate(360deg) translateX(5px) translateY(120px) rotate(-360deg)
-			scale(1);
+		transform: rotateZ(0deg) scale(1);
 		opacity: 1;
 	}
 }
