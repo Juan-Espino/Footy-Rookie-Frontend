@@ -16,11 +16,16 @@ const CarouselWrapper = () => {
 			>
 				<CarouselItem img={img} />
 			</li>
-			<li
+			{/* <li
 				className={`${styles.counterrotate} absolute block h-[25rem] w-[12.5rem] bottom-0 right-0 `}
 			>
 				<CarouselItem img={img} />
 			</li>
+			<li
+				className={`${styles.counterrotate} absolute block h-[25rem] w-[12.5rem] top-[-4.75rem] right-[6rem] `}
+			>
+				<CarouselItem img={img} />
+			</li> */}
 			{/* 
 			<li className={`${styles.counterrotate} relative  `}>
 				<CarouselItem img={img} delay="-animation-delay-10000" />
