@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import CarouselWrapper from "./carousel/CarouselWrapper";
 import NavBar from "./nav/NavBar";
+import Footer from "./footer/Footer";
 
 function App() {
 	useEffect(() => {
@@ -17,6 +18,7 @@ function App() {
 			<div className="bg-prem-purple m-auto my-48 w-[200px] h-[200px] rounded-[50%] scale-x-[3] ">
 				<CarouselWrapper />
 			</div>
+			<Footer />
 		</main>
 	);
 }
