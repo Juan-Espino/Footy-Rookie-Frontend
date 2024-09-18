@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	darkMode: "class",
+	darkMode: "selector",
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
@@ -10,6 +10,10 @@ export default {
 				"matte-black-light": "rgb(27, 29, 48)",
 				"matte-grey": "rgb(189, 189, 189)",
 				"prem-purple": "rgb(61, 25, 91)",
+			},
+			backgroundImage: {
+				"light-theme": "url('/src/assets/images/lightTheme.jpg')",
+				"dark-theme": "url('/src/assets/images/darkTheme.jpg')",
 			},
 			animationDelay: {
 				10000: "10000ms",
