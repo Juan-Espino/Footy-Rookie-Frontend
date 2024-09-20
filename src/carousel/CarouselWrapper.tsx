@@ -1,5 +1,5 @@
 import CarouselItem from "./CarouselItem";
-import img from "../assets/Images/sample.jfif";
+import img from "../assets/Images/erling-haaland-manchester-city-premier-league-norway-norwegian-footballers-uniqrenders.com - Copy.png";
 
 import styles from "./CarouselWrapper.module.css";
 

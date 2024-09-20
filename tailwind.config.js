@@ -7,6 +7,7 @@ export default {
 			colors: {
 				"matte-white": "rgb(242, 243, 244)",
 				"matte-black": "rgb(16, 18, 28)",
+				"transparent-matte-black": "rgba(16, 18, 28,.9)",
 				"matte-black-light": "rgb(27, 29, 48)",
 				"matte-grey": "rgb(189, 189, 189)",
 				"prem-purple": "rgb(61, 25, 91)",
@@ -22,6 +23,7 @@ export default {
 				"moonlit-asteroid":
 					"linear-gradient(to right, #0f2027, #203a43, #2c5364)",
 				mastercard: "linear-gradient(to right, #f46b45, #eea849)",
+				zinc: "linear-gradient(to top, #ada996, #f2f2f2, #dbdbdb, #eaeaea)",
 			},
 			animationDelay: {
 				10000: "10000ms",

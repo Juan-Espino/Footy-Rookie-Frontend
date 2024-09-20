@@ -13,7 +13,7 @@ const CarouselItem = ({
 }: CarouselItemProps) => {
 	const delayTiming = delay;
 	return (
-		<section id="icon-block" className={`${delayTiming} scale-x-[.33] `}>
+		<section id="icon-block" className={`${delayTiming} scale-x-[.33]`}>
 			<img src={img} className="" />
 			<div id="reflection" className="relative ">
 				<img src={img} className="-scale-y-[1] opacity-20" />
