@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import CarouselWrapper from "./carousel/CarouselWrapper";
 import NavBar from "./nav/NavBar";
 import Footer from "./footer/Footer";
-import Modal from "./modal/modal";
+import Modal from "./modal/Modal";
 
 function App() {
-	const [showModal, setShowModal] = useState(true);
+	const [showModal, setShowModal] = useState(false);
 	useEffect(() => {
+		setTimeout(() => {
+			setShowModal(true);
+		}, 1000);
 		if (localStorage.theme === "light") {
 			document.documentElement.classList.add("light");
 		} else {

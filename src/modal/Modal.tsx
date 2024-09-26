@@ -1,15 +1,23 @@
 import { motion, AnimatePresence } from "framer-motion";
 
 import bgImage from "../assets/images/tactics_board.webp";
+import Stats from "./ui-components/Stats";
 
 type ModalProps = {
 	showModal: boolean;
 	setShowModal: (state: boolean) => void;
 };
 
-const backdrop = {
-	visible: { opacity: 1 },
+const backdropVariants = {
 	hidden: { opacity: 0 },
+	visible: { opacity: 1 },
+	exit: { opacity: 0, transition: { delay: 0.3 } },
+};
+
+const bgImageVariants = {
+	hidden: { y: -1000 },
+	visible: { y: 0 },
+	exit: { y: -1000, transition: { delay: 0.3 } },
 };
 
 const Modal = ({ showModal, setShowModal }: ModalProps) => {
@@ -19,17 +27,23 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
 				<motion.div
 					id="modal-backdrop"
 					onClick={() => setShowModal(false)}
-					variants={backdrop}
+					variants={backdropVariants}
 					initial="hidden"
 					animate="visible"
-					className="fixed top-0 left-0 w-full h-full bg-transparent-matte-black z-40 flex items-center"
+					exit="exit"
+					className="fixed top-0 left-0 w-full h-full  p-4 bg-transparent-matte-black z-40 flex items-center"
 				>
 					<motion.div
 						id="modal-bgImage"
 						onClick={(e) => e.stopPropagation()}
-						className="relative mx-auto max-w-7xl "
+						variants={bgImageVariants}
+						initial="hidden"
+						animate="visible"
+						exit="exit"
+						className="bg-matte-white dark:bg-matte-black rounded-3xl w-11/12 h-3/6 relative mx-auto max-w-7xl "
 					>
-						<img src={bgImage} alt="" className="w-[90%] mx-auto" />
+						{/* <img src={bgImage} alt="" className="w-[90%] mx-auto h-full" /> */}
+						<Stats />
 					</motion.div>
 				</motion.div>
 			)}

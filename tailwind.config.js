@@ -20,10 +20,13 @@ export default {
 				"light-theme": "url('/src/assets/images/lightTheme.jpg')",
 				"dark-theme": "url('/src/assets/images/darkTheme.jpg')",
 				"soccer-ball": "url('/src/assets/images/soccer_ball.png')",
+				"tactics-board": "url('/src/assets/images/tactics_board.webp')",
+				"light-tactics-board":
+					"url('/src/assets/images/light_tactics_board.png')",
 				"moonlit-asteroid":
 					"linear-gradient(to right, #0f2027, #203a43, #2c5364)",
 				mastercard: "linear-gradient(to right, #f46b45, #eea849)",
-				zinc: "linear-gradient(to top, #ada996, #f2f2f2, #dbdbdb, #eaeaea)",
+				kyoto: "linear-gradient(to left, #c21500, #ffc500);",
 			},
 			animationDelay: {
 				10000: "10000ms",
