@@ -16,7 +16,8 @@ const Stats = () => {
 	const statistic = "Goals";
 	const STATSOBJECT = [
 		{
-			img: "https://renderz.app/image-cdn/player_23_239085_UT24_f697b87039e6f2bb/normal",
+			player_img:
+				"https://s3p.sofifa.net/9384b967dcf6a40a3fbfa564d585433230baf9a6.png",
 			name: "Erling Haaland",
 			stat: "10",
 			club: "Manchester City",
@@ -24,7 +25,8 @@ const Stats = () => {
 				"https://upload.wikimedia.org/wikipedia/sco/thumb/e/eb/Manchester_City_FC_badge.svg/2048px-Manchester_City_FC_badge.svg.png",
 		},
 		{
-			img: "https://www.thesun.co.uk/wp-content/uploads/2024/06/crop-28448719.jpg?strip=all&quality=100&w=1080&h=1080&crop=1",
+			player_img:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
 			stat: "6",
 			club: "Chelsea",
@@ -32,7 +34,8 @@ const Stats = () => {
 				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
 		},
 		{
-			img: "https://www.thesun.co.uk/wp-content/uploads/2024/06/crop-28448719.jpg?strip=all&quality=100&w=1080&h=1080&crop=1",
+			player_img:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
 			stat: "6",
 			club: "Chelsea",
@@ -40,7 +43,8 @@ const Stats = () => {
 				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
 		},
 		{
-			img: "https://www.thesun.co.uk/wp-content/uploads/2024/06/crop-28448719.jpg?strip=all&quality=100&w=1080&h=1080&crop=1",
+			player_img:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
 			stat: "6",
 			club: "Chelsea",
@@ -48,7 +52,8 @@ const Stats = () => {
 				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
 		},
 		{
-			img: "https://www.thesun.co.uk/wp-content/uploads/2024/06/crop-28448719.jpg?strip=all&quality=100&w=1080&h=1080&crop=1",
+			player_img:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
 			stat: "6",
 			club: "Chelsea",
@@ -56,7 +61,8 @@ const Stats = () => {
 				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
 		},
 		{
-			img: "https://www.thesun.co.uk/wp-content/uploads/2024/06/crop-28448719.jpg?strip=all&quality=100&w=1080&h=1080&crop=1",
+			player_img:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
 			stat: "6",
 			club: "Chelsea",
@@ -64,7 +70,8 @@ const Stats = () => {
 				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
 		},
 		{
-			img: "https://www.thesun.co.uk/wp-content/uploads/2024/06/crop-28448719.jpg?strip=all&quality=100&w=1080&h=1080&crop=1",
+			player_img:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
 			stat: "6",
 			club: "Chelsea",
@@ -72,7 +79,8 @@ const Stats = () => {
 				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
 		},
 		{
-			img: "https://www.thesun.co.uk/wp-content/uploads/2024/06/crop-28448719.jpg?strip=all&quality=100&w=1080&h=1080&crop=1",
+			player_img:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
 			stat: "6",
 			club: "Chelsea",
@@ -80,7 +88,8 @@ const Stats = () => {
 				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
 		},
 		{
-			img: "https://www.thesun.co.uk/wp-content/uploads/2024/06/crop-28448719.jpg?strip=all&quality=100&w=1080&h=1080&crop=1",
+			player_img:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
 			stat: "6",
 			club: "Chelsea",
@@ -88,7 +97,8 @@ const Stats = () => {
 				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
 		},
 		{
-			img: "https://www.thesun.co.uk/wp-content/uploads/2024/06/crop-28448719.jpg?strip=all&quality=100&w=1080&h=1080&crop=1",
+			player_img:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
 			stat: "6",
 			club: "Chelsea",
@@ -105,9 +115,13 @@ const Stats = () => {
 				animate="visible"
 				exit="exit"
 				// transition={{ delay: 1 }}
-				className="w-6/12 rounded-3xl bg-white dark:bg-matte-black-light  flex flex-col items-center justify-around"
+				className="w-6/12 p-6 rounded-3xl  bg-white dark:bg-matte-black-light  flex flex-col items-center justify-around"
 			>
-				<img src={STATSOBJECT[0].img} alt="first" className="size-96" />
+				<img
+					src={STATSOBJECT[0].player_img}
+					alt={STATSOBJECT[0].name}
+					className="lg:size-40 xl:size-44 2xl:size-80 p-4"
+				/>
 				<section
 					id="first-place-stats"
 					className=" text-matte-black dark:text-matte-white text-center"
@@ -118,7 +132,7 @@ const Stats = () => {
 					>
 						{STATSOBJECT[0].name}
 					</h2>
-					<div className="p-4 bg-gray-200 dark:bg-matte-black rounded-3xl flex flex-col gap-4 mb-2 justify-center text-3xl">
+					<div className="p-4 bg-gray-200 dark:bg-matte-black rounded-3xl flex flex-col gap-4  justify-center text-3xl">
 						<div id="main-stat" className="flex justify-center">
 							<p>{statistic} : &nbsp;</p>
 							<p className=" text-orange-500 dark:text-cyan-300  font-bold">
@@ -135,6 +149,7 @@ const Stats = () => {
 					</div>
 				</section>
 			</motion.section>
+			{/*  */}
 			<motion.section
 				id="runnersUp-section"
 				variants={runnersUpSectionVariants}
@@ -146,26 +161,41 @@ const Stats = () => {
 			>
 				<ul
 					id="runnersUp-stats"
-					className="grid grid-cols-2 gap-4 text-matte-black dark:text-matte-white"
+					className="h-full grid grid-cols-3 2xl:grid-cols-2 p-6 gap-4 text-matte-black dark:text-matte-white"
 				>
 					{STATSOBJECT.filter((ranking) => ranking !== STATSOBJECT[0]).map(
 						(player, index) => (
 							<li
 								className={
-									"bg-gray-200 dark:bg-matte-black rounded-3xl flex gap-4 p-4 justify-self-center " +
+									"bg-gray-200 dark:bg-matte-black rounded-3xl flex flex-col justify-between w-full px-4 py-2 justify-self-center " +
 									(index === 8
-										? "grid-cols-subgrid col-span-2  justify-self-center"
+										? "2xl:grid-cols-subgrid 2xl:col-span-2 2xl:w-3/6 2xl:justify-self-center"
 										: "")
 								}
 							>
-								<p>
-									{index + 2} : {player.name}
-								</p>
-								<img
-									src={player.club_badge}
-									alt={player.club}
-									className="size-5"
-								/>
+								<div id="ranking-name" className="flex justify-between">
+									<p className="">#{index + 2}</p>
+									<p className="">{player.name}</p>
+									<img
+										src={player.club_badge}
+										alt={player.club}
+										className="size-6"
+									/>
+								</div>
+								<div
+									id="player_badge_stat"
+									className="flex items-baseline justify-between"
+								>
+									<img
+										src={player.player_img}
+										alt={player.name}
+										className="size-12"
+									/>
+
+									<p className=" text-orange-500 dark:text-cyan-300 text-3xl  font-bold">
+										{player.stat}
+									</p>
+								</div>
 							</li>
 						)
 					)}
