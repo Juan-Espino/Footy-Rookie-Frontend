@@ -11,7 +11,7 @@ type ModalProps = {
 const backdropVariants = {
 	hidden: { opacity: 0 },
 	visible: { opacity: 1 },
-	exit: { opacity: 0, transition: { delay: 0.3 } },
+	exit: { opacity: 0, transition: { delay: 0.1 } },
 };
 
 const bgImageVariants = {
@@ -36,13 +36,13 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
 					<motion.div
 						id="modal-bgImage"
 						onClick={(e) => e.stopPropagation()}
-						variants={bgImageVariants}
-						initial="hidden"
-						animate="visible"
-						exit="exit"
-						className="bg-matte-white dark:bg-matte-black rounded-3xl w-11/12 h-3/6 relative mx-auto max-w-7xl "
+						// variants={bgImageVariants}
+						// initial="hidden"
+						// animate="visible"
+						// exit="exit"
+						className="rounded-3xl w-11/12 h-3/6 relative mx-auto max-w-7xl "
 					>
-						{/* <img src={bgImage} alt="" className="w-[90%] mx-auto h-full" /> */}
+						{/* todo:while stats loading have a bouncing ball here */}
 						<Stats />
 					</motion.div>
 				</motion.div>
