@@ -115,12 +115,12 @@ const Stats = () => {
 				animate="visible"
 				exit="exit"
 				// transition={{ delay: 1 }}
-				className="w-6/12 p-6 rounded-3xl  bg-white dark:bg-matte-black-light  flex flex-col items-center justify-around"
+				className="w-6/12 p-6 rounded-3xl  bg-white dark:bg-matte-black-light  flex flex-col items-center justify-center"
 			>
 				<img
 					src={STATSOBJECT[0].player_img}
 					alt={STATSOBJECT[0].name}
-					className="lg:size-40 xl:size-44 2xl:size-80 p-4"
+					className=" pb-4 lg:size-40 2xl:size-96 2xl:pb-8"
 				/>
 				<section
 					id="first-place-stats"
@@ -173,15 +173,25 @@ const Stats = () => {
 										: "")
 								}
 							>
-								<div id="ranking-name" className="flex justify-between">
-									<p className="">#{index + 2}</p>
-									<p className="">{player.name}</p>
-									<img
-										src={player.club_badge}
-										alt={player.club}
-										className="size-6"
-									/>
+								<div
+									id="ranking-badge-name"
+									className="flex flex-col justify-between"
+								>
+									<div className="flex justify-between">
+										<p className="2xl:text-lg">#{index + 2}</p>
+										<p className="text-lg font-bold mx-auto text-center hidden 2xl:inline">
+											{player.name}
+										</p>
+										<img
+											src={player.club_badge}
+											alt={player.club}
+											className="size-6 2xl:size-8"
+										/>
+									</div>
 								</div>
+								<p className="text-lg font-bold mx-auto text-center 2xl:hidden">
+									{player.name}
+								</p>
 								<div
 									id="player_badge_stat"
 									className="flex items-baseline justify-between"
@@ -189,7 +199,7 @@ const Stats = () => {
 									<img
 										src={player.player_img}
 										alt={player.name}
-										className="size-12"
+										className="md:size-9 2xl:size-11"
 									/>
 
 									<p className=" text-orange-500 dark:text-cyan-300 text-3xl  font-bold">

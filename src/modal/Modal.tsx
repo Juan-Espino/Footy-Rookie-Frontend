@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 
 import bgImage from "../assets/images/tactics_board.webp";
-import Stats from "./ui-components/Stats";
+import Stats from "./components/Stats";
 
 type ModalProps = {
 	showModal: boolean;
