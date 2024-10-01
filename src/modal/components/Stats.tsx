@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import FirstPlace from "./FirstPlace";
 import RunnerUp from "./RunnerUp";
 
@@ -100,7 +99,6 @@ const Stats = () => {
 	return (
 		<div id="first-runnersUp-wrapper" className="h-full flex gap-4">
 			{/* modal is broken into two sections */}
-
 			<FirstPlace statsObject={STATSOBJECT} />
 			<RunnerUp statsObject={STATSOBJECT} />
 		</div>

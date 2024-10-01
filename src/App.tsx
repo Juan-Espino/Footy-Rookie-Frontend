@@ -7,9 +7,6 @@ import Modal from "./modal/Modal";
 function App() {
 	const [showModal, setShowModal] = useState(false);
 	useEffect(() => {
-		setTimeout(() => {
-			setShowModal(true);
-		}, 1000);
 		if (localStorage.theme === "light") {
 			document.documentElement.classList.add("light");
 		} else {
@@ -20,7 +17,7 @@ function App() {
 	return (
 		<main>
 			<Modal showModal={showModal} setShowModal={setShowModal} />
-			<NavBar />
+			<NavBar setShowModal={setShowModal} />
 			<section id="hero" className="max-w-screen-2xl mx-auto">
 				<div className="m-auto my-48 w-[200px] h-[200px] rounded-[50%] scale-x-[3] ">
 					<CarouselWrapper />

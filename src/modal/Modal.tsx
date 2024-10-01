@@ -1,6 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
-
-import bgImage from "../assets/images/tactics_board.webp";
+import { motion, AnimatePresence, easeOut } from "framer-motion";
 import Stats from "./components/Stats";
 
 type ModalProps = {
@@ -11,7 +9,7 @@ type ModalProps = {
 const backdropVariants = {
 	hidden: { opacity: 0 },
 	visible: { opacity: 1 },
-	exit: { opacity: 0, transition: { delay: 0.1 } },
+	exit: { opacity: 0, transition: { easeOut } },
 };
 
 const bgImageVariants = {
