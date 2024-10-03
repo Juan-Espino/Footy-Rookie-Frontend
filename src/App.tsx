@@ -5,7 +5,10 @@ import Footer from "./footer/Footer";
 import Modal from "./modal/Modal";
 
 function App() {
+	//state for showing the modal
 	const [showModal, setShowModal] = useState(false);
+	//state for the statistic to be shown on modal
+	const [statToBeShowed, setStatToBeShowed] = useState("");
 	useEffect(() => {
 		if (localStorage.theme === "light") {
 			document.documentElement.classList.add("light");
@@ -16,10 +19,17 @@ function App() {
 	}, []);
 	return (
 		<main>
-			<Modal showModal={showModal} setShowModal={setShowModal} />
-			<NavBar setShowModal={setShowModal} />
-			<section id="hero" className="max-w-screen-2xl mx-auto">
-				<div className="m-auto my-48 w-[200px] h-[200px] rounded-[50%] scale-x-[3] ">
+			<Modal
+				showModal={showModal}
+				setShowModal={setShowModal}
+				statToBeShowed={statToBeShowed}
+			/>
+			<NavBar
+				setShowModal={setShowModal}
+				setStatToBeShowed={setStatToBeShowed}
+			/>
+			<section id="hero" className="max-w-screen-2xl mx-auto my-[30vh]">
+				<div className="m-auto w-[200px] h-[200px] rounded-[50%] scale-x-[3] ">
 					<CarouselWrapper />
 				</div>
 			</section>

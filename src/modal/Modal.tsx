@@ -4,6 +4,7 @@ import Stats from "./components/Stats";
 type ModalProps = {
 	showModal: boolean;
 	setShowModal: (state: boolean) => void;
+	statToBeShowed: string;
 };
 
 const backdropVariants = {
@@ -12,13 +13,7 @@ const backdropVariants = {
 	exit: { opacity: 0, transition: { easeOut } },
 };
 
-const bgImageVariants = {
-	hidden: { y: -1000 },
-	visible: { y: 0 },
-	exit: { y: -1000, transition: { delay: 0.3 } },
-};
-
-const Modal = ({ showModal, setShowModal }: ModalProps) => {
+const Modal = ({ showModal, setShowModal, statToBeShowed }: ModalProps) => {
 	return (
 		<AnimatePresence mode="wait">
 			{showModal && (
@@ -34,14 +29,12 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
 					<motion.div
 						id="modal-bgImage"
 						onClick={(e) => e.stopPropagation()}
-						// variants={bgImageVariants}
-						// initial="hidden"
-						// animate="visible"
-						// exit="exit"
-						className="rounded-3xl w-11/12 h-3/6 relative mx-auto max-w-7xl "
+						className="rounded-3xl w-11/12 h-[65%] relative mx-auto max-w-7xl "
 					>
-						{/* todo:while stats loading have a bouncing ball here */}
-						<Stats />
+						{/* todo:while stats loading have a bouncing ball here 
+								maybe have the ball fall from the top of the screen and
+									bounce on the center*/}
+						<Stats statToBeShowed={statToBeShowed} />
 					</motion.div>
 				</motion.div>
 			)}

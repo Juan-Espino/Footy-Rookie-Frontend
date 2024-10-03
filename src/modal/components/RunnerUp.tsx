@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 
 type RunnersUpProps = {
 	statsObject: {
-		player_img: string;
-		name: string;
+		player_img?: string;
+		name?: string;
 		stat: string;
 		club: string;
 		club_badge: string;
 	}[];
+	typeOfStat: string;
 };
 
 const runnersUpSectionVariants = {
@@ -16,7 +17,7 @@ const runnersUpSectionVariants = {
 	exit: { x: 2000, transition: { delay: 0, type: "spring", mass: 0.3 } },
 };
 
-const RunnerUp = ({ statsObject }: RunnersUpProps) => {
+const RunnerUp = ({ statsObject, typeOfStat }: RunnersUpProps) => {
 	return (
 		<motion.section
 			id="runnersUp-section"
@@ -24,7 +25,6 @@ const RunnerUp = ({ statsObject }: RunnersUpProps) => {
 			initial="hidden"
 			animate="visible"
 			exit="exit"
-			transition={{ delay: 1 }}
 			className="w-6/12 rounded-3xl bg-white dark:bg-matte-black-light"
 		>
 			<ul
@@ -35,6 +35,7 @@ const RunnerUp = ({ statsObject }: RunnersUpProps) => {
 					.filter((ranking) => ranking !== statsObject[0])
 					.map((player, index) => (
 						<li
+							key={index}
 							className={
 								"bg-gray-200 dark:bg-matte-black rounded-3xl flex flex-col justify-between w-full px-4 p-2 justify-self-center " +
 								(index === 8

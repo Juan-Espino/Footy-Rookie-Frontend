@@ -2,11 +2,13 @@ import DarkMode from "./components/DarkMode";
 
 type NavBarProps = {
 	setShowModal: (state: boolean) => void;
+	setStatToBeShowed: (state: string) => void;
 };
-const NavBar = ({ setShowModal }: NavBarProps) => {
-	// if a nav item is clicked, open modal
+const NavBar = ({ setShowModal, setStatToBeShowed }: NavBarProps) => {
+	// if a nav item is clicked, open modal, set statToShow to target
 	const handleLinkClick = (statToBeShowed: string) => {
 		setShowModal(true);
+		setStatToBeShowed(statToBeShowed);
 	};
 
 	const navLinksText = [
@@ -27,10 +29,11 @@ const NavBar = ({ setShowModal }: NavBarProps) => {
 			</div>
 
 			<ul className="font-marker flex justify-center gap-4 text-2xl text-matte-black dark:text-matte-white">
-				{navLinksText.map((item) => (
+				{navLinksText.map((item, key) => (
 					<li
 						onClick={() => handleLinkClick(item)}
-						className="px-1 py-2 cursor-pointer transition-all ease-in-out duration-100 hover:scale-110 active:scale-100 active:text-orange-500 active:dark:text-cyan-300 "
+						className="px-1 py-2 cursor-pointer transition-all ease-in-out duration-100 hover:scale-110 active:scale-100 hover:text-orange-500 hover:dark:text-cyan-300 "
+						key={key}
 					>
 						{item}
 					</li>

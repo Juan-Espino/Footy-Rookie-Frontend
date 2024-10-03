@@ -1,9 +1,100 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FirstPlace from "./FirstPlace";
 import RunnerUp from "./RunnerUp";
 
-const Stats = () => {
-	const STATSOBJECT = [
+type StatsProps = {
+	statToBeShowed: string;
+};
+const Stats = ({ statToBeShowed }: StatsProps) => {
+	const [typeOfStat, setTypeOfStat] = useState("");
+
+	useEffect(() => {
+		//handler to determine which stats will be passed into children components
+		const statsHandler = () => {
+			if (statToBeShowed === "Defense" || statToBeShowed === "Points") {
+				console.log(statToBeShowed);
+				setTypeOfStat("Team");
+			} else {
+				setTypeOfStat("Player");
+			}
+		};
+
+		statsHandler();
+	}, [statToBeShowed]);
+
+	useEffect(() => {
+		console.log("type of stat : " + typeOfStat);
+	}, [typeOfStat]);
+
+	//returns the appropriate stat object based on typeOfStat
+	//for testing todo:delete this
+	const STATOBJECTHANDLER = () => {
+		if (typeOfStat == "Team") return STATOBJECTTEAMPOINTS;
+		else return STATSOBJECTGOALS;
+	};
+	const STATOBJECTTEAMPOINTS = [
+		{
+			stat: "20",
+			club: "Arsenal",
+			club_badge:
+				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
+		},
+		{
+			stat: "20",
+			club: "Arsenal",
+			club_badge:
+				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
+		},
+		{
+			stat: "20",
+			club: "Arsenal",
+			club_badge:
+				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
+		},
+		{
+			stat: "20",
+			club: "Arsenal",
+			club_badge:
+				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
+		},
+		{
+			stat: "20",
+			club: "Arsenal",
+			club_badge:
+				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
+		},
+		{
+			stat: "20",
+			club: "Arsenal",
+			club_badge:
+				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
+		},
+		{
+			stat: "20",
+			club: "Arsenal",
+			club_badge:
+				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
+		},
+		{
+			stat: "20",
+			club: "Arsenal",
+			club_badge:
+				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
+		},
+		{
+			stat: "20",
+			club: "Arsenal",
+			club_badge:
+				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
+		},
+		{
+			stat: "20",
+			club: "Arsenal",
+			club_badge:
+				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
+		},
+	];
+	const STATSOBJECTGOALS = [
 		{
 			player_img:
 				"https://s3p.sofifa.net/9384b967dcf6a40a3fbfa564d585433230baf9a6.png",
@@ -12,6 +103,9 @@ const Stats = () => {
 			club: "Manchester City",
 			club_badge:
 				"https://upload.wikimedia.org/wikipedia/sco/thumb/e/eb/Manchester_City_FC_badge.svg/2048px-Manchester_City_FC_badge.svg.png",
+			national_flag:
+				"https://cdn.britannica.com/01/3101-050-1BB27B69/Flag-Norway.jpg",
+			shirt_number: "9",
 		},
 		{
 			player_img:
@@ -97,10 +191,11 @@ const Stats = () => {
 	];
 
 	return (
-		<div id="first-runnersUp-wrapper" className="h-full flex gap-4">
+		<div id="first-runnersUp" className="h-full flex gap-4">
 			{/* modal is broken into two sections */}
-			<FirstPlace statsObject={STATSOBJECT} />
-			<RunnerUp statsObject={STATSOBJECT} />
+			<FirstPlace statsObject={STATOBJECTHANDLER()} typeOfStat={typeOfStat} />
+			<RunnerUp statsObject={STATOBJECTHANDLER()} typeOfStat={typeOfStat} />
+			{/* todo:change modals based on the typeOfStat they are receiving */}
 		</div>
 	);
 };
