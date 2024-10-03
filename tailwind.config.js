@@ -11,6 +11,7 @@ export default {
 				"matte-black-light": "rgb(27, 29, 48)",
 				"matte-grey": "rgb(189, 189, 189)",
 				"prem-purple": "rgb(61, 25, 91)",
+				"prem-pink": "rgb(255, 0, 90)",
 			},
 			fontFamily: {
 				nunito: ["Nunito", "sans-serif"],
@@ -27,6 +28,7 @@ export default {
 					"linear-gradient(to right, #0f2027, #203a43, #2c5364)",
 				mastercard: "linear-gradient(to right, #f46b45, #eea849)",
 				kyoto: "linear-gradient(to left, #c21500, #ffc500);",
+				darken: "linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) )",
 			},
 			animationDelay: {
 				10000: "10000ms",

@@ -19,7 +19,7 @@ const CarouselItem = ({
 				<img src={img} className="-scale-y-[1] opacity-20" />
 				<div
 					id="overlay"
-					className="absolute top-0 left-0 h-[12.5rem] w-[12.5rem] bg-gradient-to-t from-matte-white dark:from-matte-black from-20%	"
+					className="absolute top-0 left-0 h-[12.5rem] w-[12.5rem] bg-gradient-to-t from-prem-pink dark:from-matte-black from-20%	"
 				></div>
 			</div>
 		</section>

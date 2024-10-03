@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import england from "../../assets/images/england.webp";
 
 type RunnersUpProps = {
 	statsObject: {
@@ -8,7 +9,7 @@ type RunnersUpProps = {
 		club: string;
 		club_badge: string;
 	}[];
-	typeOfStat: string;
+	statToBeShowed: string;
 };
 
 const runnersUpSectionVariants = {
@@ -17,7 +18,7 @@ const runnersUpSectionVariants = {
 	exit: { x: 2000, transition: { delay: 0, type: "spring", mass: 0.3 } },
 };
 
-const RunnerUp = ({ statsObject, typeOfStat }: RunnersUpProps) => {
+const RunnerUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 	return (
 		<motion.section
 			id="runnersUp-section"
@@ -25,7 +26,7 @@ const RunnerUp = ({ statsObject, typeOfStat }: RunnersUpProps) => {
 			initial="hidden"
 			animate="visible"
 			exit="exit"
-			className="w-6/12 rounded-3xl bg-white dark:bg-matte-black-light"
+			className="w-6/12 rounded-3xl bg-matte-white dark:bg-matte-black-light"
 		>
 			<ul
 				id="runnersUp-stats"
@@ -33,11 +34,11 @@ const RunnerUp = ({ statsObject, typeOfStat }: RunnersUpProps) => {
 			>
 				{statsObject
 					.filter((ranking) => ranking !== statsObject[0])
-					.map((player, index) => (
+					.map((object, index) => (
 						<li
 							key={index}
 							className={
-								"bg-gray-200 dark:bg-matte-black rounded-3xl flex flex-col justify-between w-full px-4 p-2 justify-self-center " +
+								"bg-prem-pink rounded-3xl flex flex-col justify-between w-full px-4 p-2 justify-self-center " +
 								(index === 8
 									? "2xl:grid-cols-subgrid 2xl:col-span-2 2xl:w-3/6 2xl:justify-self-center"
 									: "")
@@ -50,30 +51,30 @@ const RunnerUp = ({ statsObject, typeOfStat }: RunnersUpProps) => {
 								<div className="flex justify-between">
 									<p className="2xl:text-lg">#{index + 2}</p>
 									<p className="text-lg font-bold mx-auto text-center hidden 2xl:inline">
-										{player.name}
+										{object.name ? object.name : object.club}
 									</p>
 									<img
-										src={player.club_badge}
-										alt={player.club}
-										className="size-6 2xl:size-8"
+										src={object.name ? object.club_badge : england}
+										alt={object.name ? object.club : "england"}
+										className="size-6 2xl:size-8 rounded-full"
 									/>
 								</div>
 							</div>
 							<p className="text-lg font-bold mx-auto text-center 2xl:hidden">
-								{player.name}
+								{object.name ? object.name : object.club}
 							</p>
 							<div
-								id="player_badge_stat"
-								className="flex items-baseline justify-between"
+								id="object_badge_stat"
+								className="flex items-baseline justify-between  bg-matte-white dark:bg-matte-black  rounded-full"
 							>
 								<img
-									src={player.player_img}
-									alt={player.name}
-									className="md:size-9 2xl:size-11"
+									src={object.name ? object.player_img : object.club_badge}
+									alt={object.name ? object.player_img : object.club}
+									className="m-2 xlg:m-4  self-center md:size-7 2xl:size-11"
 								/>
 
-								<p className=" text-orange-500 dark:text-cyan-300 text-3xl  font-bold">
-									{player.stat}
+								<p className="m-2 xlg:m-4  self-center text-orange-500 dark:text-cyan-300 md:text-xl lg:text-2xl  font-bold">
+									{object.stat}
 								</p>
 							</div>
 						</li>

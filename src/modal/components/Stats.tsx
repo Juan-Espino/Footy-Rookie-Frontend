@@ -6,30 +6,11 @@ type StatsProps = {
 	statToBeShowed: string;
 };
 const Stats = ({ statToBeShowed }: StatsProps) => {
-	const [typeOfStat, setTypeOfStat] = useState("");
-
-	useEffect(() => {
-		//handler to determine which stats will be passed into children components
-		const statsHandler = () => {
-			if (statToBeShowed === "Defense" || statToBeShowed === "Points") {
-				console.log(statToBeShowed);
-				setTypeOfStat("Team");
-			} else {
-				setTypeOfStat("Player");
-			}
-		};
-
-		statsHandler();
-	}, [statToBeShowed]);
-
-	useEffect(() => {
-		console.log("type of stat : " + typeOfStat);
-	}, [typeOfStat]);
-
 	//returns the appropriate stat object based on typeOfStat
 	//for testing todo:delete this
 	const STATOBJECTHANDLER = () => {
-		if (typeOfStat == "Team") return STATOBJECTTEAMPOINTS;
+		if (statToBeShowed == "Points" || statToBeShowed == "Defense")
+			return STATOBJECTTEAMPOINTS;
 		else return STATSOBJECTGOALS;
 	};
 	const STATOBJECTTEAMPOINTS = [
@@ -193,8 +174,14 @@ const Stats = ({ statToBeShowed }: StatsProps) => {
 	return (
 		<div id="first-runnersUp" className="h-full flex gap-4">
 			{/* modal is broken into two sections */}
-			<FirstPlace statsObject={STATOBJECTHANDLER()} typeOfStat={typeOfStat} />
-			<RunnerUp statsObject={STATOBJECTHANDLER()} typeOfStat={typeOfStat} />
+			<FirstPlace
+				statsObject={STATOBJECTHANDLER()}
+				statToBeShowed={statToBeShowed}
+			/>
+			<RunnerUp
+				statsObject={STATOBJECTHANDLER()}
+				statToBeShowed={statToBeShowed}
+			/>
 			{/* todo:change modals based on the typeOfStat they are receiving */}
 		</div>
 	);
