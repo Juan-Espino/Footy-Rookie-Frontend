@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import FirstPlace from "./FirstPlace";
-import RunnerUp from "./RunnerUp";
+import RunnerUp from "./RunnersUp";
 
 type StatsProps = {
 	statToBeShowed: string;
@@ -92,6 +92,8 @@ const Stats = ({ statToBeShowed }: StatsProps) => {
 			player_img:
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
+			national_flag:
+				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
 			stat: "6",
 			club: "Chelsea",
 			club_badge:
@@ -101,6 +103,8 @@ const Stats = ({ statToBeShowed }: StatsProps) => {
 			player_img:
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
+			national_flag:
+				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
 			stat: "6",
 			club: "Chelsea",
 			club_badge:
@@ -110,6 +114,8 @@ const Stats = ({ statToBeShowed }: StatsProps) => {
 			player_img:
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
+			national_flag:
+				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
 			stat: "6",
 			club: "Chelsea",
 			club_badge:
@@ -119,6 +125,8 @@ const Stats = ({ statToBeShowed }: StatsProps) => {
 			player_img:
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
+			national_flag:
+				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
 			stat: "6",
 			club: "Chelsea",
 			club_badge:
@@ -128,6 +136,8 @@ const Stats = ({ statToBeShowed }: StatsProps) => {
 			player_img:
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
+			national_flag:
+				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
 			stat: "6",
 			club: "Chelsea",
 			club_badge:
@@ -137,6 +147,8 @@ const Stats = ({ statToBeShowed }: StatsProps) => {
 			player_img:
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
+			national_flag:
+				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
 			stat: "6",
 			club: "Chelsea",
 			club_badge:
@@ -146,6 +158,8 @@ const Stats = ({ statToBeShowed }: StatsProps) => {
 			player_img:
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
+			national_flag:
+				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
 			stat: "6",
 			club: "Chelsea",
 			club_badge:
@@ -155,6 +169,8 @@ const Stats = ({ statToBeShowed }: StatsProps) => {
 			player_img:
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
+			national_flag:
+				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
 			stat: "6",
 			club: "Chelsea",
 			club_badge:
@@ -164,6 +180,8 @@ const Stats = ({ statToBeShowed }: StatsProps) => {
 			player_img:
 				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
 			name: "Cole Palmer",
+			national_flag:
+				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
 			stat: "6",
 			club: "Chelsea",
 			club_badge:

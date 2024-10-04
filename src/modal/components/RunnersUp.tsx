@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import england from "../../assets/images/england.webp";
+import premier_league_logo from "../../assets/images/premier_leauge_logo.png";
 
 type RunnersUpProps = {
 	statsObject: {
@@ -8,6 +9,7 @@ type RunnersUpProps = {
 		stat: string;
 		club: string;
 		club_badge: string;
+		national_flag?: string;
 	}[];
 	statToBeShowed: string;
 };
@@ -18,7 +20,7 @@ const runnersUpSectionVariants = {
 	exit: { x: 2000, transition: { delay: 0, type: "spring", mass: 0.3 } },
 };
 
-const RunnerUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
+const RunnersUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 	return (
 		<motion.section
 			id="runnersUp-section"
@@ -38,43 +40,49 @@ const RunnerUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 						<li
 							key={index}
 							className={
-								"bg-prem-pink rounded-3xl flex flex-col justify-between w-full px-4 p-2 justify-self-center " +
+								"bg-prem-pink rounded-3xl flex flex-col justify-between w-full pt-2 justify-self-center " +
 								(index === 8
 									? "2xl:grid-cols-subgrid 2xl:col-span-2 2xl:w-3/6 2xl:justify-self-center"
 									: "")
 							}
 						>
 							<div
-								id="ranking-badge-name"
-								className="flex flex-col justify-between"
+								id="ranking-nationalflag"
+								className="flex flex-col justify-between px-4"
 							>
 								<div className="flex justify-between">
 									<p className="2xl:text-lg">#{index + 2}</p>
-									<p className="text-lg font-bold mx-auto text-center hidden 2xl:inline">
-										{object.name ? object.name : object.club}
-									</p>
 									<img
-										src={object.name ? object.club_badge : england}
+										src={object.name ? object.national_flag : england}
 										alt={object.name ? object.club : "england"}
-										className="size-6 2xl:size-8 rounded-full"
+										className="size-5 2xl:size-7 2xl:p-1 rounded-full"
+									/>
+									<img
+										src={object.name ? object.club_badge : premier_league_logo}
+										alt={object.name ? object.club : "prem"}
+										className="size-5 2xl:size-8 2xl:p-1 rounded-full"
 									/>
 								</div>
 							</div>
-							<p className="text-lg font-bold mx-auto text-center 2xl:hidden">
-								{object.name ? object.name : object.club}
-							</p>
-							<div
-								id="object_badge_stat"
-								className="flex items-baseline justify-between  bg-matte-white dark:bg-matte-black  rounded-full"
-							>
-								<img
-									src={object.name ? object.player_img : object.club_badge}
-									alt={object.name ? object.player_img : object.club}
-									className="m-2 xl:m-4  self-center md:size-7 2xl:size-11"
-								/>
 
-								<p className="m-2 xl:m-4  self-center text-orange-500 dark:text-cyan-300 md:text-xl lg:text-2xl  font-bold">
-									{object.stat}
+							<div
+								id="img_stat_name"
+								className="flex flex-col justify-around h-4/5 text-matte-white  bg-matte-black  rounded-t-3xl rounded-b-3xl"
+							>
+								<div className="flex justify-around p-1">
+									<img
+										src={object.name ? object.player_img : object.club_badge}
+										alt={object.name ? object.player_img : object.club}
+										className="m-2 self-center md:size-10 xl:size-12"
+									/>
+
+									<p className="m-1 self-center text-orange-500 dark:text-cyan-300 md:text-2xl lg:text-4xl  font-bold">
+										{object.stat}
+									</p>
+								</div>
+
+								<p className="self-center text-lg font-bold pb-0.5">
+									{object.name ? object.name : object.club}
 								</p>
 							</div>
 						</li>
@@ -84,4 +92,4 @@ const RunnerUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 	);
 };
 
-export default RunnerUp;
+export default RunnersUp;
