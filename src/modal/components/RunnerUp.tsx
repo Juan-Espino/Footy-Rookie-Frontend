@@ -70,10 +70,10 @@ const RunnerUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 								<img
 									src={object.name ? object.player_img : object.club_badge}
 									alt={object.name ? object.player_img : object.club}
-									className="m-2 xlg:m-4  self-center md:size-7 2xl:size-11"
+									className="m-2 xl:m-4  self-center md:size-7 2xl:size-11"
 								/>
 
-								<p className="m-2 xlg:m-4  self-center text-orange-500 dark:text-cyan-300 md:text-xl lg:text-2xl  font-bold">
+								<p className="m-2 xl:m-4  self-center text-orange-500 dark:text-cyan-300 md:text-xl lg:text-2xl  font-bold">
 									{object.stat}
 								</p>
 							</div>

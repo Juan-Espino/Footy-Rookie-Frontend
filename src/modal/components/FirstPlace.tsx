@@ -57,13 +57,22 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 				{/* player/team name */}
 				<h2
 					id="name"
-					className="text-4xl p-4 bg-mastercard dark:bg-moonlit-asteroid rounded-3xl  font-bold text-matte-white mb-4"
+					className="font-marker text-4xl p-4 bg-mastercard dark:bg-moonlit-asteroid rounded-3xl  font-bold text-matte-white mb-4"
 				>
 					{statsObject[0].name ? statsObject[0].name : statsObject[0].club}
 				</h2>
 				<div className="p-4 bg-matte-white dark:bg-matte-black rounded-3xl flex flex-col gap-4  justify-center text-3xl">
 					<div id="main-stat" className="flex justify-center">
-						<p>{statToBeShowed} : &nbsp;</p>
+						{statToBeShowed === "Keeper" && (
+							<p className="font-marker">{"Saves"} : &nbsp; </p>
+						)}
+						{statToBeShowed === "Defense" && (
+							<p className="font-marker">{"Clean Sheets"} : &nbsp; </p>
+						)}
+						{statToBeShowed !== "Defense" && statToBeShowed !== "Keeper" && (
+							<p className="font-marker">{statToBeShowed} : &nbsp; </p>
+						)}
+
 						<p className=" text-orange-500 dark:text-cyan-300  font-bold">
 							{statsObject[0].stat}
 						</p>
@@ -73,7 +82,7 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 						id="club-wrapper"
 						className=" text-3xl flex gap-4 items-center relative"
 					>
-						<p>
+						<p className="font-marker">
 							{statsObject[0].player_img
 								? statsObject[0].club
 								: "Premier League"}
