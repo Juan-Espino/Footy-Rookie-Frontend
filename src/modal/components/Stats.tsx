@@ -1,205 +1,24 @@
-import { useEffect, useState } from "react";
 import FirstPlace from "./FirstPlace";
 import RunnerUp from "./RunnersUp";
 
 type StatsProps = {
 	statToBeShowed: string;
+	statsObject: {
+		player_img?: string;
+		name?: string;
+		national_flag?: string;
+		shirt_number?: string;
+		stat: string;
+		club: string;
+		club_badge: string;
+	}[];
 };
-const Stats = ({ statToBeShowed }: StatsProps) => {
-	//returns the appropriate stat object based on typeOfStat
-	//for testing todo:delete this
-	const STATOBJECTHANDLER = () => {
-		if (statToBeShowed == "Points" || statToBeShowed == "Defense")
-			return STATOBJECTTEAMPOINTS;
-		else return STATSOBJECTGOALS;
-	};
-	const STATOBJECTTEAMPOINTS = [
-		{
-			stat: "20",
-			club: "Arsenal",
-			club_badge:
-				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
-		},
-		{
-			stat: "20",
-			club: "Arsenal",
-			club_badge:
-				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
-		},
-		{
-			stat: "20",
-			club: "Arsenal",
-			club_badge:
-				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
-		},
-		{
-			stat: "20",
-			club: "Arsenal",
-			club_badge:
-				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
-		},
-		{
-			stat: "20",
-			club: "Arsenal",
-			club_badge:
-				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
-		},
-		{
-			stat: "20",
-			club: "Arsenal",
-			club_badge:
-				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
-		},
-		{
-			stat: "20",
-			club: "Arsenal",
-			club_badge:
-				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
-		},
-		{
-			stat: "20",
-			club: "Arsenal",
-			club_badge:
-				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
-		},
-		{
-			stat: "20",
-			club: "Arsenal",
-			club_badge:
-				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
-		},
-		{
-			stat: "20",
-			club: "Arsenal",
-			club_badge:
-				"https://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png",
-		},
-	];
-	const STATSOBJECTGOALS = [
-		{
-			player_img:
-				"https://s3p.sofifa.net/9384b967dcf6a40a3fbfa564d585433230baf9a6.png",
-			name: "Erling Haaland",
-			stat: "10",
-			club: "Manchester City",
-			club_badge:
-				"https://upload.wikimedia.org/wikipedia/sco/thumb/e/eb/Manchester_City_FC_badge.svg/2048px-Manchester_City_FC_badge.svg.png",
-			national_flag:
-				"https://cdn.britannica.com/01/3101-050-1BB27B69/Flag-Norway.jpg",
-			shirt_number: "9",
-		},
-		{
-			player_img:
-				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
-			name: "Cole Palmer",
-			national_flag:
-				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
-			stat: "6",
-			club: "Chelsea",
-			club_badge:
-				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
-		},
-		{
-			player_img:
-				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
-			name: "Cole Palmer",
-			national_flag:
-				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
-			stat: "6",
-			club: "Chelsea",
-			club_badge:
-				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
-		},
-		{
-			player_img:
-				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
-			name: "Cole Palmer",
-			national_flag:
-				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
-			stat: "6",
-			club: "Chelsea",
-			club_badge:
-				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
-		},
-		{
-			player_img:
-				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
-			name: "Cole Palmer",
-			national_flag:
-				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
-			stat: "6",
-			club: "Chelsea",
-			club_badge:
-				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
-		},
-		{
-			player_img:
-				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
-			name: "Cole Palmer",
-			national_flag:
-				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
-			stat: "6",
-			club: "Chelsea",
-			club_badge:
-				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
-		},
-		{
-			player_img:
-				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
-			name: "Cole Palmer",
-			national_flag:
-				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
-			stat: "6",
-			club: "Chelsea",
-			club_badge:
-				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
-		},
-		{
-			player_img:
-				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
-			name: "Cole Palmer",
-			national_flag:
-				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
-			stat: "6",
-			club: "Chelsea",
-			club_badge:
-				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
-		},
-		{
-			player_img:
-				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
-			name: "Cole Palmer",
-			national_flag:
-				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
-			stat: "6",
-			club: "Chelsea",
-			club_badge:
-				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
-		},
-		{
-			player_img:
-				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsortitoutsi.b-cdn.net%2Fuploads%2Fface%2F28120042.png&f=1&nofb=1&ipt=0661e7edb7601a63ef06ac7d195e9b0fca76f495dca3be2ff5ccd7672c8f2f0b&ipo=images",
-			name: "Cole Palmer",
-			national_flag:
-				"https://cdn.britannica.com/44/344-050-94536674/Flag-England.jpg",
-			stat: "6",
-			club: "Chelsea",
-			club_badge:
-				"https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/800px-Chelsea_FC.svg.png",
-		},
-	];
-
+const Stats = ({ statToBeShowed, statsObject }: StatsProps) => {
 	return (
 		<div id="first-runnersUp" className="h-full flex gap-4">
 			{/* modal is broken into two sections */}
-			<FirstPlace
-				statsObject={STATOBJECTHANDLER()}
-				statToBeShowed={statToBeShowed}
-			/>
-			<RunnerUp
-				statsObject={STATOBJECTHANDLER()}
-				statToBeShowed={statToBeShowed}
-			/>
+			<FirstPlace statsObject={statsObject} statToBeShowed={statToBeShowed} />
+			<RunnerUp statsObject={statsObject} statToBeShowed={statToBeShowed} />
 			{/* todo:change modals based on the typeOfStat they are receiving */}
 		</div>
 	);
