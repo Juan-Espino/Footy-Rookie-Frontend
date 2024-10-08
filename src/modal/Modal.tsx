@@ -193,7 +193,7 @@ const STATSOBJECTGOALS = [
 
 const Modal = ({ showModal, setShowModal, statToBeShowed }: ModalProps) => {
 	useEffect(() => {
-		fetch("https://api.kanye.rest/")
+		fetch("http://localhost:5000/api/stats/goals")
 			.then((response) => {
 				return response.json();
 			})
