@@ -193,16 +193,18 @@ const STATSOBJECTGOALS = [
 
 const Modal = ({ showModal, setShowModal, statToBeShowed }: ModalProps) => {
 	useEffect(() => {
-		fetch("http://localhost:5000/api/stats/goals")
-			.then((response) => {
-				return response.json();
-			})
-			.then((dataObject) => {
-				console.log(dataObject);
-			})
-			.catch((err) => {
-				console.warn(err.message);
-			});
+		if (showModal) {
+			fetch("http://localhost:5000/api/stats/goals")
+				.then((response) => {
+					return response.json();
+				})
+				.then((dataObject) => {
+					console.log(dataObject);
+				})
+				.catch((err) => {
+					console.warn(err.message);
+				});
+		}
 	}, [statToBeShowed]);
 
 	//returns the appropriate stat object based on typeOfStat
