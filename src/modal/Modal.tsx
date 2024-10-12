@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import { motion, AnimatePresence, easeOut } from "framer-motion";
-import Stats from "./components/Stats";
+import PointsStats from "./components/stats/PointsStats";
+import Stats from "./components/stats/Stats";
 
 type ModalProps = {
 	showModal: boolean;
@@ -192,21 +192,6 @@ const STATSOBJECTGOALS = [
 ];
 
 const Modal = ({ showModal, setShowModal, statToBeShowed }: ModalProps) => {
-	useEffect(() => {
-		if (showModal) {
-			fetch("http://localhost:5000/api/stats/goals")
-				.then((response) => {
-					return response.json();
-				})
-				.then((dataObject) => {
-					console.log(dataObject);
-				})
-				.catch((err) => {
-					console.warn(err.message);
-				});
-		}
-	}, [statToBeShowed]);
-
 	//returns the appropriate stat object based on typeOfStat
 	//for testing todo:delete this
 	const STATOBJECTHANDLER = () => {
@@ -235,10 +220,10 @@ const Modal = ({ showModal, setShowModal, statToBeShowed }: ModalProps) => {
 								maybe have the ball fall from the top of the screen and
 									bounce on the center*/}
 
-						<Stats
-							statToBeShowed={statToBeShowed}
-							statsObject={STATOBJECTHANDLER()}
-						/>
+						{/* For efficiency sake we conditionaly render all STATS components
+						based on the state of statToBeShowed and Memoize each STATS component
+						 wherer an fetch request is made to the api*/}
+						{statToBeShowed === "Points" && <PointsStats />}
 					</motion.div>
 				</motion.div>
 			)}

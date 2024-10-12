@@ -1,5 +1,5 @@
-import FirstPlace from "./FirstPlace";
-import RunnerUp from "./RunnersUp";
+import FirstPlace from "../ui/FirstPlace";
+import RunnerUp from "../ui/RunnersUp";
 
 type StatsProps = {
 	statToBeShowed: string;

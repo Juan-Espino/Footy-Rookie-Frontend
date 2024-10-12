@@ -10,6 +10,8 @@ function App() {
 	//state for the statistic to be shown on modal
 	const [statToBeShowed, setStatToBeShowed] = useState("");
 	useEffect(() => {
+		//handler for setting theme to dark by default or
+		//for setting theme to the clients previously choosen theme
 		if (localStorage.theme === "light") {
 			document.documentElement.classList.add("light");
 		} else {
@@ -19,15 +21,17 @@ function App() {
 	}, []);
 	return (
 		<main>
+			<NavBar
+				setShowModal={setShowModal}
+				setStatToBeShowed={setStatToBeShowed}
+			/>
 			<Modal
 				showModal={showModal}
 				setShowModal={setShowModal}
 				statToBeShowed={statToBeShowed}
 			/>
-			<NavBar
-				setShowModal={setShowModal}
-				setStatToBeShowed={setStatToBeShowed}
-			/>
+
+			{/* section for all Carousel related ui */}
 			<section id="hero" className="max-w-screen-2xl mx-auto my-[30vh]">
 				<div className="m-auto w-[200px] h-[200px] rounded-[50%] scale-x-[3] ">
 					<CarouselWrapper />

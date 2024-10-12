@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import premier_league_logo from "../../assets/images/premier_leauge_logo.png";
-import england from "../../assets/images/england.webp";
+import premier_league_logo from "../../../assets/images/premier_leauge_logo.png";
+import england from "../../../assets/images/england.webp";
 
 type FirstPlaceProps = {
 	statsObject: {
