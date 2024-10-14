@@ -5,11 +5,12 @@ import premier_league_logo from "../../../assets/images/premier_leauge_logo.png"
 type RunnersUpProps = {
 	statsObject: {
 		player_img?: string;
-		name?: string;
+		player_name?: string;
 		stat: string;
-		club: string;
+		club_name: string;
 		club_badge: string;
 		national_flag?: string;
+		jersey_number?: string;
 	}[];
 	statToBeShowed: string;
 };
@@ -53,13 +54,17 @@ const RunnersUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 								<div className="flex justify-between">
 									<p className="2xl:text-lg">#{index + 2}</p>
 									<img
-										src={object.name ? object.national_flag : england}
-										alt={object.name ? object.club : "england"}
+										src={object.player_name ? object.national_flag : england}
+										alt={object.player_name ? object.club_name : "england"}
 										className="size-5 2xl:size-7 2xl:p-1 rounded-full"
 									/>
 									<img
-										src={object.name ? object.club_badge : premier_league_logo}
-										alt={object.name ? object.club : "prem"}
+										src={
+											object.player_name
+												? object.club_badge
+												: premier_league_logo
+										}
+										alt={object.player_name ? object.club_name : "prem"}
 										className="size-5 2xl:size-8 2xl:p-1 rounded-full"
 									/>
 								</div>
@@ -69,10 +74,14 @@ const RunnersUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 								id="img_stat_name"
 								className="flex flex-col justify-around h-4/5 text-matte-white  bg-matte-black  rounded-t-3xl rounded-b-3xl"
 							>
-								<div className="flex justify-around p-1">
+								<div className="flex justify-center flex-col gap-4 p-1 xl:flex-row xl:gap-0">
 									<img
-										src={object.name ? object.player_img : object.club_badge}
-										alt={object.name ? object.player_img : object.club}
+										src={
+											object.player_name ? object.player_img : object.club_badge
+										}
+										alt={
+											object.player_name ? object.player_img : object.club_name
+										}
 										className="m-2 self-center md:size-10 xl:size-12"
 									/>
 
@@ -81,8 +90,8 @@ const RunnersUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 									</p>
 								</div>
 
-								<p className="self-center text-lg font-bold pb-0.5">
-									{object.name ? object.name : object.club}
+								<p className="self-center text-sm font-bold pb-0.5">
+									{object.player_name ? object.player_name : object.club_name}
 								</p>
 							</div>
 						</li>

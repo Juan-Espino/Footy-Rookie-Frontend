@@ -5,11 +5,11 @@ import england from "../../../assets/images/england.webp";
 type FirstPlaceProps = {
 	statsObject: {
 		player_img?: string;
-		name?: string;
+		player_name?: string;
 		national_flag?: string;
-		shirt_number?: string;
+		jersey_number?: string;
 		stat: string;
-		club: string;
+		club_name: string;
 		club_badge: string;
 	}[];
 	statToBeShowed: string;
@@ -21,8 +21,6 @@ const firstSectionVariants = {
 };
 
 const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
-	const STATISTIC = "Goals";
-
 	return (
 		<motion.section
 			id="first-section"
@@ -59,7 +57,9 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 					id="name"
 					className="font-marker text-4xl p-4 bg-mastercard dark:bg-moonlit-asteroid rounded-3xl  font-bold text-matte-white mb-4"
 				>
-					{statsObject[0].name ? statsObject[0].name : statsObject[0].club}
+					{statsObject[0].player_name
+						? statsObject[0].player_name
+						: statsObject[0].club_name}
 				</h2>
 				<div className="p-4 bg-matte-white dark:bg-matte-black rounded-3xl flex flex-col gap-4  justify-center text-3xl">
 					<div id="main-stat" className="flex justify-center">
@@ -84,7 +84,7 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 					>
 						<p className="font-marker">
 							{statsObject[0].player_img
-								? statsObject[0].club
+								? statsObject[0].club_name
 								: "Premier League"}
 						</p>
 						<div className="w-24 h-10 relative">
@@ -92,8 +92,8 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 								className="size-10 p-1 text-matte-white absolute right-0 rounded-full
 						bg-matte-black-light"
 							>
-								{statsObject[0].shirt_number
-									? statsObject[0].shirt_number
+								{statsObject[0].jersey_number
+									? statsObject[0].jersey_number
 									: "1"}
 							</p>
 							<img
@@ -113,7 +113,7 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 								}
 								alt={
 									statsObject[0].player_img
-										? statsObject[0].club
+										? statsObject[0].club_name
 										: "Premier_Leauge_Logo"
 								}
 								className="size-10 absolute right-14 rounded-full"

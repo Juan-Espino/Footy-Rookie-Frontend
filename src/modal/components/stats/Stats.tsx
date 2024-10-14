@@ -19,7 +19,6 @@ const Stats = ({ statToBeShowed, statsObject }: StatsProps) => {
 			{/* modal is broken into two sections */}
 			<FirstPlace statsObject={statsObject} statToBeShowed={statToBeShowed} />
 			<RunnerUp statsObject={statsObject} statToBeShowed={statToBeShowed} />
-			{/* todo:change modals based on the typeOfStat they are receiving */}
 		</div>
 	);
 };
