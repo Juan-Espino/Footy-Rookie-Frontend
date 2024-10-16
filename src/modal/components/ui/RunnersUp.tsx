@@ -12,7 +12,6 @@ type RunnersUpProps = {
 		national_flag?: string;
 		jersey_number?: string;
 	}[];
-	statToBeShowed: string;
 };
 
 const runnersUpSectionVariants = {
@@ -21,7 +20,7 @@ const runnersUpSectionVariants = {
 	exit: { x: 2000, transition: { delay: 0, type: "spring", mass: 0.3 } },
 };
 
-const RunnersUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
+const RunnersUp = ({ statsObject }: RunnersUpProps) => {
 	return (
 		<motion.section
 			id="runnersUp-section"
@@ -33,7 +32,7 @@ const RunnersUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 		>
 			<ul
 				id="runnersUp-stats"
-				className="h-full grid grid-cols-3 2xl:grid-cols-2 p-6 gap-4 text-matte-black dark:text-matte-white"
+				className="h-full grid grid-cols-3 2xl:grid-cols-3 p-6 gap-4 text-matte-black dark:text-matte-white"
 			>
 				{statsObject
 					.filter((ranking) => ranking !== statsObject[0])
@@ -41,10 +40,7 @@ const RunnersUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 						<li
 							key={index}
 							className={
-								"bg-prem-pink rounded-3xl flex flex-col justify-between w-full pt-2 justify-self-center " +
-								(index === 8
-									? "2xl:grid-cols-subgrid 2xl:col-span-2 2xl:w-3/6 2xl:justify-self-center"
-									: "")
+								"bg-prem-pink rounded-3xl flex flex-col justify-between w-full pt-2 justify-self-center "
 							}
 						>
 							<div
@@ -52,7 +48,7 @@ const RunnersUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 								className="flex flex-col justify-between px-4"
 							>
 								<div className="flex justify-between">
-									<p className="2xl:text-lg">#{index + 2}</p>
+									<p className="font-bold 2xl:text-lg">#{index + 2}</p>
 									<img
 										src={object.player_name ? object.national_flag : england}
 										alt={object.player_name ? object.club_name : "england"}
@@ -72,9 +68,9 @@ const RunnersUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 
 							<div
 								id="img_stat_name"
-								className="flex flex-col justify-around h-4/5 text-matte-white  bg-matte-black  rounded-t-3xl rounded-b-3xl"
+								className="flex flex-col justify-around h-4/5 px-2 text-matte-white  bg-matte-black  rounded-t-3xl rounded-b-3xl"
 							>
-								<div className="flex justify-center flex-col gap-4 p-1 xl:flex-row xl:gap-0">
+								<div className="flex justify-around flex-col p-1 xl:flex-row xl:gap-0">
 									<img
 										src={
 											object.player_name ? object.player_img : object.club_badge
@@ -90,7 +86,7 @@ const RunnersUp = ({ statsObject, statToBeShowed }: RunnersUpProps) => {
 									</p>
 								</div>
 
-								<p className="self-center text-sm font-bold pb-0.5">
+								<p className="self-center text-center text-sm font-bold pb-0.5">
 									{object.player_name ? object.player_name : object.club_name}
 								</p>
 							</div>
