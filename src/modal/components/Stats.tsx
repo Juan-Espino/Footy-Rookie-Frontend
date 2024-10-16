@@ -1,17 +1,10 @@
+import type { StatObjectsArray } from "../../App";
 import FirstPlace from "./ui/FirstPlace";
 import RunnerUp from "./ui/RunnersUp";
 
 type StatsProps = {
 	statToBeShowed: string;
-	statObjectsArray: {
-		stat: string;
-		player_name?: string;
-		player_img?: string;
-		national_flag?: string;
-		club_name: string;
-		club_badge: string;
-		jersey_number?: string;
-	}[];
+	statObjectsArray: StatObjectsArray;
 };
 const Stats = ({ statToBeShowed, statObjectsArray }: StatsProps) => {
 	return (

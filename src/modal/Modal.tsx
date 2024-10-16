@@ -1,4 +1,6 @@
 import { motion, AnimatePresence, easeOut } from "framer-motion";
+
+import type { StatObjectsArray } from "../App";
 import Stats from "./components/Stats";
 
 type ModalProps = {
@@ -6,15 +8,7 @@ type ModalProps = {
 	setShowModal: (state: boolean) => void;
 	statToBeShowed: string;
 
-	statObjectsArray?: {
-		stat: string;
-		player_name?: string;
-		player_img?: string;
-		national_flag?: string;
-		club_name: string;
-		club_badge: string;
-		jersey_number?: string;
-	}[];
+	statObjectsArray?: StatObjectsArray;
 	loading: boolean;
 	error: boolean;
 };
@@ -51,7 +45,9 @@ const Modal = ({
 						className="rounded-3xl w-11/12 h-[65%] relative mx-auto max-w-7xl "
 					>
 						{loading && !error && <h1 className="text-matte-white">Loading</h1>}
-						{error && !loading && <h1 className="text-matte-white">Error</h1>}
+						{error && !loading && (
+							<h1 className="text-matte-white">Error {error}</h1>
+						)}
 						{!loading &&
 							!error &&
 							statObjectsArray &&

@@ -5,7 +5,7 @@ import Footer from "./footer/Footer";
 import Modal from "./modal/Modal";
 
 //type format for all non error responses from api
-type StatObjectsArray = {
+export type StatObjectsArray = {
 	stat: string;
 	player_name?: string;
 	player_img?: string;
@@ -14,6 +14,11 @@ type StatObjectsArray = {
 	club_badge: string;
 	jersey_number?: string;
 }[];
+
+export type StatStateStructure = {
+	stats: StatObjectsArray;
+	loaded: boolean;
+};
 
 function App() {
 	//state for showing the modal
@@ -33,8 +38,20 @@ function App() {
 	}, []);
 
 	//states for holding an array of statistic objects returned from api calls
-	const [pointsStatsArray, setPointsStatsArray] = useState<StatObjectsArray>();
-	const [pointsLoaded, setPointsLoaded] = useState(false);
+	const [pointsState, setPointsState] = useState<StatStateStructure>({
+		stats: [
+			{
+				stat: "",
+				player_name: "",
+				player_img: "",
+				national_flag: "",
+				club_name: "",
+				club_badge: "",
+				jersey_number: "",
+			},
+		],
+		loaded: false,
+	});
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 
@@ -48,9 +65,16 @@ function App() {
 				if (!response.ok) {
 					throw error;
 				}
-				setPointsStatsArray(await response.json());
+				let responseJson = await response.json();
+				setPointsState((previousState) => {
+					const data = {
+						...previousState,
+						stats: responseJson,
+						loaded: true,
+					};
+					return data;
+				});
 				setLoading(false);
-				setPointsLoaded(true);
 			} catch (error) {
 				setError(true);
 				setLoading(false);
@@ -58,7 +82,7 @@ function App() {
 			}
 		};
 
-		if (statToBeShowed === "Points" && !pointsLoaded) fetchStats();
+		if (statToBeShowed === "Points" && !pointsState.loaded) fetchStats();
 	}, [statToBeShowed]);
 
 	return (
@@ -71,7 +95,7 @@ function App() {
 				showModal={showModal}
 				setShowModal={setShowModal}
 				statToBeShowed={statToBeShowed}
-				statObjectsArray={pointsStatsArray}
+				statObjectsArray={pointsState.stats}
 				loading={loading}
 				error={error}
 			/>
