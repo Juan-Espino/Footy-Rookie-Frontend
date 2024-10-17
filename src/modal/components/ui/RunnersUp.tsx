@@ -68,9 +68,9 @@ const RunnersUp = ({ statsObject }: RunnersUpProps) => {
 
 							<div
 								id="img_stat_name"
-								className="flex flex-col justify-around h-4/5 px-2 text-matte-white  bg-matte-black  rounded-t-3xl rounded-b-3xl"
+								className="flex flex-col justify-around h-5/6 xl:h-4/5 px-2 text-matte-white  bg-matte-black  rounded-t-3xl rounded-b-[1.25rem]"
 							>
-								<div className="flex justify-around flex-col p-1 xl:flex-row xl:gap-0">
+								<div className="flex justify-around flex-col gap-1 p-1 xl:flex-row xl:gap-0">
 									<img
 										src={
 											object.player_name ? object.player_img : object.club_badge
@@ -86,7 +86,7 @@ const RunnersUp = ({ statsObject }: RunnersUpProps) => {
 									</p>
 								</div>
 
-								<p className="self-center text-center text-sm font-bold pb-0.5">
+								<p className="self-center text-center text-sm font-bold pb-1">
 									{object.player_name ? object.player_name : object.club_name}
 								</p>
 							</div>

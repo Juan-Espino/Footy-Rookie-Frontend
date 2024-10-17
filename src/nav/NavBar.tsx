@@ -8,16 +8,16 @@ const NavBar = ({ setShowModal, setStatToBeShowed }: NavBarProps) => {
 	// if a nav item is clicked, open modal, set statToShow to target
 	const handleLinkClick = (statToBeShowed: string) => {
 		setShowModal(true);
-		setStatToBeShowed(statToBeShowed);
+		setStatToBeShowed(statToBeShowed.split(" ").join(""));
 	};
 
 	const navLinksText = [
 		"Points",
 		"Goals",
 		"Assist",
-		"Keeper",
+		"Clean Sheets",
 		"Reds",
-		"Defense",
+		"Yellows",
 	];
 
 	return (
@@ -28,7 +28,7 @@ const NavBar = ({ setShowModal, setStatToBeShowed }: NavBarProps) => {
 				</h1>
 			</div>
 
-			<ul className="font-marker flex justify-center gap-4 text-2xl text-matte-black dark:text-matte-white">
+			<ul className="font-marker flex justify-center gap-4 text-2xl text-matte-white">
 				{navLinksText.map((item, key) => (
 					<li
 						onClick={() => handleLinkClick(item)}
