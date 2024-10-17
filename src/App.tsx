@@ -23,7 +23,7 @@ function App() {
 		}
 	}, []);
 
-	const { loading, error, clearError, sendRequest, pointsState } =
+	const { loading, error, clearError, sendRequest, pointsState, goalsState } =
 		useHttpClient();
 
 	useEffect(() => {
@@ -44,7 +44,22 @@ function App() {
 				showModal={showModal}
 				setShowModal={setShowModal}
 				statToBeShowed={statToBeShowed}
-				statObjectsArray={pointsState.stats}
+				statObjectsArray={() => {
+					if (statToBeShowed === "Points") return pointsState.stats;
+					else if (statToBeShowed === "Goals") return goalsState.stats;
+					else
+						return [
+							{
+								stat: "",
+								player_name: "",
+								player_img: "",
+								national_flag: "",
+								club_name: "",
+								club_badge: "",
+								jersey_number: "",
+							},
+						];
+				}}
 				loading={loading}
 				error={error}
 			/>

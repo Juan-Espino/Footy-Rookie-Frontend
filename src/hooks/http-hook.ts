@@ -19,6 +19,18 @@ export type StatStateStructure = {
 	loaded: boolean;
 };
 
+const DefaultStatObjectArray = [
+	{
+		stat: "",
+		player_name: "",
+		player_img: "",
+		national_flag: "",
+		club_name: "",
+		club_badge: "",
+		jersey_number: "",
+	},
+];
+
 /*
 
 */
@@ -29,17 +41,12 @@ export const useHttpClient = () => {
 	const [error, setError] = useState(false);
 	//states for holding an array of statistic objects returned from api calls
 	const [pointsState, setPointsState] = useState<StatStateStructure>({
-		stats: [
-			{
-				stat: "",
-				player_name: "",
-				player_img: "",
-				national_flag: "",
-				club_name: "",
-				club_badge: "",
-				jersey_number: "",
-			},
-		],
+		stats: DefaultStatObjectArray,
+		loaded: false,
+	});
+	//states for holding an array of statistic objects returned from api calls
+	const [goalsState, setGoalsState] = useState<StatStateStructure>({
+		stats: DefaultStatObjectArray,
 		loaded: false,
 	});
 
@@ -64,7 +71,10 @@ export const useHttpClient = () => {
 		// 	(statToBeShowed === "Points" && pointsState.loaded) ||
 		// 	(statToBeShowed === "Goals" && goalsState.loaded) || ...
 		// )
-		if (statToBeShowed === "Points" && pointsState.loaded) {
+		if (
+			(statToBeShowed === "Points" && pointsState.loaded) ||
+			(statToBeShowed === "Goals" && goalsState.loaded)
+		) {
 			return;
 		} else {
 			setLoading(true);
@@ -78,12 +88,22 @@ export const useHttpClient = () => {
 				const responseData = await response.json();
 
 				if (!responseData) {
-					throw new Error(responseData.message);
+					throw new Error("Loading data failed, Please try again");
 				}
 
 				// todo: make this section for every possible statToBeShowed
+				//Set value of desired stat to response data based on statToBeShowed
 				if (statToBeShowed === "Points") {
 					setPointsState((previousState) => {
+						const data = {
+							...previousState,
+							stats: responseData,
+							loaded: true,
+						};
+						return data;
+					});
+				} else if (statToBeShowed === "Goals") {
+					setGoalsState((previousState) => {
 						const data = {
 							...previousState,
 							stats: responseData,
@@ -107,5 +127,5 @@ export const useHttpClient = () => {
 	const clearError = () => {
 		setError(false);
 	};
-	return { loading, error, clearError, sendRequest, pointsState };
+	return { loading, error, clearError, sendRequest, pointsState, goalsState };
 };

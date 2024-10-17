@@ -1,4 +1,4 @@
-import type { StatObjectsArray } from "../../App";
+import type { StatObjectsArray } from "../../hooks/http-hook";
 import FirstPlace from "./ui/FirstPlace";
 import RunnerUp from "./ui/RunnersUp";
 

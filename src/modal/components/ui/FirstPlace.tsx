@@ -1,17 +1,10 @@
 import { motion } from "framer-motion";
+import { StatObjectsArray } from "../../../hooks/http-hook";
 import premier_league_logo from "../../../assets/images/premier_leauge_logo.png";
 import england from "../../../assets/images/england.webp";
 
 type FirstPlaceProps = {
-	statsObject: {
-		player_img?: string;
-		player_name?: string;
-		national_flag?: string;
-		jersey_number?: string;
-		stat: string;
-		club_name: string;
-		club_badge: string;
-	}[];
+	statsObject: StatObjectsArray;
 	statToBeShowed: string;
 };
 const firstSectionVariants = {
@@ -28,15 +21,9 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 			initial="hidden"
 			animate="visible"
 			exit="exit"
-			style={
-				statsObject[0].player_img
-					? {
-							background: `linear-gradient(to bottom left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url(${statsObject[0].club_badge}) center `,
-					  }
-					: {
-							background: `linear-gradient(to bottom left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url(${premier_league_logo}) 50% 17%`,
-					  }
-			}
+			style={{
+				background: `linear-gradient(to bottom left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url(${premier_league_logo}) 50% 17%`,
+			}}
 			className="w-6/12 p-6 rounded-3xl  bg-white dark:bg-matte-black-light  flex flex-col items-center justify-center "
 		>
 			<img
@@ -46,7 +33,7 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 						: statsObject[0].club_badge
 				}
 				alt="first-place"
-				className=" pb-4 md:size-60 lg:size-72 2xl:size-96 2xl:pb-8"
+				className=" pb-4 md:size-64 lg:size-72 2xl:size-96 2xl:pb-8"
 			/>
 			<section
 				id="first-place-stats"

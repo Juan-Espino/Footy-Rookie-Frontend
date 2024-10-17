@@ -8,6 +8,7 @@ const NavBar = ({ setShowModal, setStatToBeShowed }: NavBarProps) => {
 	// if a nav item is clicked, open modal, set statToShow to target
 	const handleLinkClick = (statToBeShowed: string) => {
 		setShowModal(true);
+		//this will set the value 'Clean Sheets' to 'CleanSheets'
 		setStatToBeShowed(statToBeShowed.split(" ").join(""));
 	};
 

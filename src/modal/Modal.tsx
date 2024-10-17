@@ -1,6 +1,6 @@
 import { motion, AnimatePresence, easeOut } from "framer-motion";
 
-import type { StatObjectsArray } from "../App";
+import type { StatObjectsArray } from "../hooks/http-hook";
 import Stats from "./components/Stats";
 
 type ModalProps = {
@@ -8,7 +8,7 @@ type ModalProps = {
 	setShowModal: (state: boolean) => void;
 	statToBeShowed: string;
 
-	statObjectsArray?: StatObjectsArray;
+	statObjectsArray?: () => StatObjectsArray;
 	loading: boolean;
 	error: boolean;
 };
@@ -48,15 +48,12 @@ const Modal = ({
 						{error && !loading && (
 							<h1 className="text-matte-white">Error {error}</h1>
 						)}
-						{!loading &&
-							!error &&
-							statObjectsArray &&
-							statToBeShowed === "Points" && (
-								<Stats
-									statToBeShowed={statToBeShowed}
-									statObjectsArray={statObjectsArray}
-								/>
-							)}
+						{!loading && !error && statObjectsArray && (
+							<Stats
+								statToBeShowed={statToBeShowed}
+								statObjectsArray={statObjectsArray()}
+							/>
+						)}
 					</motion.div>
 				</motion.div>
 			)}
