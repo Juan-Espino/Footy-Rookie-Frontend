@@ -21,10 +21,7 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 			initial="hidden"
 			animate="visible"
 			exit="exit"
-			style={{
-				background: `linear-gradient(to bottom left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url(${premier_league_logo}) 50% 17%`,
-			}}
-			className="w-6/12 p-6 rounded-3xl  bg-white dark:bg-matte-black-light  flex flex-col items-center justify-center "
+			className="w-6/12 p-6 rounded-3xl  backdrop-blur-xl  flex flex-col items-center justify-center "
 		>
 			<img
 				src={
@@ -51,13 +48,17 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 				<div className="p-4 bg-matte-white dark:bg-matte-black rounded-3xl flex flex-col gap-4  justify-center text-3xl">
 					<div id="main-stat" className="flex justify-center">
 						{statToBeShowed === "Keeper" && (
-							<p className="font-marker">{"Saves"} : &nbsp; </p>
+							<p className="font-nunito font-bold">{"Saves"} : &nbsp; </p>
 						)}
 						{statToBeShowed === "Defense" && (
-							<p className="font-marker">{"Clean Sheets"} : &nbsp; </p>
+							<p className="font-nunito font-bold">
+								{"Clean Sheets"} : &nbsp;{" "}
+							</p>
 						)}
 						{statToBeShowed !== "Defense" && statToBeShowed !== "Keeper" && (
-							<p className="font-marker">{statToBeShowed} : &nbsp; </p>
+							<p className="font-nunito font-bold">
+								{statToBeShowed} : &nbsp;{" "}
+							</p>
 						)}
 
 						<p className=" text-orange-500 dark:text-cyan-300  font-bold">
@@ -69,7 +70,7 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 						id="club-wrapper"
 						className=" text-3xl flex gap-4 items-center relative"
 					>
-						<p className="font-marker">
+						<p className="font-nunito font-bold">
 							{statsObject[0].player_img
 								? statsObject[0].club_name
 								: "Premier League"}

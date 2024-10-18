@@ -22,70 +22,54 @@ const RunnersUp = ({ statsObject }: RunnersUpProps) => {
 			initial="hidden"
 			animate="visible"
 			exit="exit"
-			className="w-6/12 rounded-3xl bg-matte-white dark:bg-matte-black-light"
+			className="w-6/12 rounded-3xl backdrop-blur-xl"
 		>
+			{/* className="h-full grid grid-cols-3 2xl:grid-cols-3 p-6 gap-4 text-matte-black dark:text-matte-white" */}
 			<ul
 				id="runnersUp-stats"
-				className="h-full grid grid-cols-3 2xl:grid-cols-3 p-6 gap-4 text-matte-black dark:text-matte-white"
+				className="grid grid-cols-3 justify-items-center"
 			>
-				{statsObject
-					.filter((ranking) => ranking !== statsObject[0])
-					.map((object, index) => (
-						<li
-							key={index}
-							className={
-								"bg-prem-pink rounded-3xl flex flex-col justify-between w-full pt-2 justify-self-center "
-							}
-						>
-							<div
-								id="ranking-nationalflag"
-								className="flex flex-col justify-between px-4"
-							>
-								<div className="flex justify-between">
-									<p className="font-bold 2xl:text-lg">#{index + 2}</p>
-									<img
-										src={object.player_name ? object.national_flag : england}
-										alt={object.player_name ? object.club_name : "england"}
-										className="size-5 2xl:size-7 2xl:p-1 rounded-full"
-									/>
-									<img
-										src={
-											object.player_name
-												? object.club_badge
-												: premier_league_logo
-										}
-										alt={object.player_name ? object.club_name : "prem"}
-										className="size-5 2xl:size-8 2xl:p-1 rounded-full"
-									/>
-								</div>
-							</div>
-
-							<div
-								id="img_stat_name"
-								className="flex flex-col justify-around h-5/6 xl:h-4/5 px-2 text-matte-white  bg-matte-black  rounded-t-3xl rounded-b-[1.25rem]"
-							>
-								<div className="flex justify-around  flex-col gap-1 p-1 xl:flex-row xl:gap-0">
-									<img
-										src={
-											object.player_name ? object.player_img : object.club_badge
-										}
-										alt={
-											object.player_name ? object.player_img : object.club_name
-										}
-										className="m-2 self-center md:size-10 xl:size-12"
-									/>
-
-									<p className="m-1 pt-2 self-center text-orange-500 dark:text-cyan-300 md:text-2xl lg:text-4xl  font-bold">
-										{object.stat}
-									</p>
-								</div>
-
-								<p className="self-center text-center text-sm font-bold pb-1">
-									{object.player_name ? object.player_name : object.club_name}
-								</p>
-							</div>
-						</li>
-					))}
+				{/* style={{
+				background: `linear-gradient(to bottom left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url(${premier_league_logo}) 50% 17%`,
+			}} */}
+				<li
+					className="size-44 relative rounded-2xl"
+					style={{
+						background: `linear-gradient(to bottom left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(${statsObject[3].club_badge}) no-repeat`,
+						backgroundSize: "150%",
+						backgroundPosition: "50% 0%",
+					}}
+				>
+					<p className=" font-marker absolute backdrop-blur-[2px] bottom-0 top-0 left-0 min-h-full min-w-full h-full -rotate-90 self-center text-2xl font-bold text-matte-white">
+						{"Cole Palmer"}
+					</p>
+					<img
+						src={statsObject[1].player_img}
+						alt="runner_up"
+						className="absolute size-24 left-[15%] bottom-0"
+					/>
+					{/* <img src={statsObject[1].club_badge} alt="club_badge" /> */}
+				</li>
+				<li className="size-44 relative rounded-2xl bg-deepSpace ">
+					<p className=" absolute bottom-0 top-0 left-0 min-h-full min-w-full h-full -rotate-90 self-center text-2xl font-bold text-matte-white">
+						{"Cole Palmer"}
+					</p>
+					<img
+						src={statsObject[3].player_img}
+						alt="runner_up"
+						className="absolute size-24 right-0 bottom-0"
+					/>
+				</li>
+				<li className="size-44 relative rounded-2xl ">
+					<p className=" absolute bottom-0 top-0 left-0 min-h-full min-w-full h-full -rotate-90 self-center text-2xl font-bold text-matte-white">
+						{"Cole Palmer"}
+					</p>
+					<img
+						src={statsObject[4].player_img}
+						alt="runner_up"
+						className="absolute size-24 right-0 bottom-0"
+					/>
+				</li>
 			</ul>
 		</motion.section>
 	);
