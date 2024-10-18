@@ -1,17 +1,11 @@
 import { motion } from "framer-motion";
+
+import { StatObjectsArray } from "../../../hooks/http-hook";
 import england from "../../../assets/images/england.webp";
 import premier_league_logo from "../../../assets/images/premier_leauge_logo.png";
 
 type RunnersUpProps = {
-	statsObject: {
-		player_img?: string;
-		player_name?: string;
-		stat: string;
-		club_name: string;
-		club_badge: string;
-		national_flag?: string;
-		jersey_number?: string;
-	}[];
+	statsObject: StatObjectsArray;
 };
 
 const runnersUpSectionVariants = {

@@ -33,7 +33,7 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 						: statsObject[0].club_badge
 				}
 				alt="first-place"
-				className=" pb-4 md:size-64 lg:size-72 2xl:size-96 2xl:pb-8"
+				className=" pb-4 md:size-72 2xl:size-96 2xl:pb-8"
 			/>
 			<section
 				id="first-place-stats"
