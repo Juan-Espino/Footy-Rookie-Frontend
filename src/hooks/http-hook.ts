@@ -65,6 +65,11 @@ export const useHttpClient = () => {
 		stats: DefaultStatObjectArray,
 		loaded: false,
 	});
+	//states for holding an array of yellows statistic objects returned from api calls
+	const [yellowsState, setYellowsState] = useState<StatStateStructure>({
+		stats: DefaultStatObjectArray,
+		loaded: false,
+	});
 
 	/*
   Handler function for sending http request to the api
@@ -82,17 +87,13 @@ export const useHttpClient = () => {
 		body = null,
 		headers = {}
 	) => {
-		// todo:
-		// if (
-		// 	(statToBeShowed === "Points" && pointsState.loaded) ||
-		// 	(statToBeShowed === "Goals" && goalsState.loaded) || ...
-		// )
 		if (
 			(statToBeShowed === "Points" && pointsState.loaded) ||
 			(statToBeShowed === "Goals" && goalsState.loaded) ||
 			(statToBeShowed === "Assist" && assistState.loaded) ||
 			(statToBeShowed === "CleanSheets" && cleanSheetsState.loaded) ||
-			(statToBeShowed === "Reds" && redsState.loaded)
+			(statToBeShowed === "Reds" && redsState.loaded) ||
+			(statToBeShowed === "Yellows" && yellowsState.loaded)
 		) {
 			return;
 		} else {
@@ -156,6 +157,15 @@ export const useHttpClient = () => {
 						};
 						return data;
 					});
+				} else if (statToBeShowed === "Yellows") {
+					setYellowsState((previousState) => {
+						const data = {
+							...previousState,
+							stats: responseData,
+							loaded: true,
+						};
+						return data;
+					});
 				}
 			} catch (error) {
 				setError(true);
@@ -183,5 +193,6 @@ export const useHttpClient = () => {
 		assistState,
 		cleanSheetsState,
 		redsState,
+		yellowsState,
 	};
 };

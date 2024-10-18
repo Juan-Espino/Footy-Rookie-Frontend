@@ -34,6 +34,7 @@ function App() {
 		assistState,
 		cleanSheetsState,
 		redsState,
+		yellowsState,
 	} = useHttpClient();
 
 	useEffect(() => {
@@ -61,6 +62,7 @@ function App() {
 					else if (statToBeShowed === "CleanSheets")
 						return cleanSheetsState.stats;
 					else if (statToBeShowed === "Reds") return redsState.stats;
+					else if (statToBeShowed === "Yellows") return yellowsState.stats;
 					else
 						return [
 							{

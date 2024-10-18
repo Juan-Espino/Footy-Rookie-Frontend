@@ -17,8 +17,8 @@ const NavBar = ({ setShowModal, setStatToBeShowed }: NavBarProps) => {
 		"Goals",
 		"Assist",
 		"Clean Sheets",
-		"Reds",
 		"Yellows",
+		"Reds",
 	];
 
 	return (
