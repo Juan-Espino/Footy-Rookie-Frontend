@@ -14,7 +14,7 @@ const Stats = ({ statToBeShowed, statObjectsArray }: StatsProps) => {
 				statsObject={statObjectsArray}
 				statToBeShowed={statToBeShowed}
 			/>
-			<RunnerUp statsObject={statObjectsArray} />
+			<RunnerUp statsObjectArray={statObjectsArray} />
 		</div>
 	);
 };

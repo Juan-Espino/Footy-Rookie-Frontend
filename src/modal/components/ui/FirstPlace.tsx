@@ -39,13 +39,13 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 				{/* player/team name */}
 				<h2
 					id="name"
-					className="font-marker text-4xl p-4 bg-mastercard dark:bg-moonlit-asteroid rounded-3xl  font-bold text-matte-white mb-4"
+					className="font-marker text-5xl p-4 bg-mastercard dark:bg-moonlit-asteroid rounded-xl  font-bold text-matte-white mb-4"
 				>
 					{statsObject[0].player_name
 						? statsObject[0].player_name
 						: statsObject[0].club_name}
 				</h2>
-				<div className="p-4 bg-matte-white dark:bg-matte-black rounded-3xl flex flex-col gap-4  justify-center text-3xl">
+				<div className="p-4 bg-matte-white dark:bg-matte-black rounded-3xl flex flex-col gap-4  justify-center text-4xl">
 					<div id="main-stat" className="flex justify-center">
 						{statToBeShowed === "Keeper" && (
 							<p className="font-nunito font-bold">{"Saves"} : &nbsp; </p>
