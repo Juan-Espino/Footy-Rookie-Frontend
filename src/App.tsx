@@ -23,8 +23,16 @@ function App() {
 		}
 	}, []);
 
-	const { loading, error, clearError, sendRequest, pointsState, goalsState } =
-		useHttpClient();
+	//All states returned by custom api fetching hook useHttpClient()
+	const {
+		loading,
+		error,
+		clearError,
+		sendRequest,
+		pointsState,
+		goalsState,
+		assistState,
+	} = useHttpClient();
 
 	useEffect(() => {
 		if (statToBeShowed)
@@ -47,6 +55,7 @@ function App() {
 				statObjectsArray={() => {
 					if (statToBeShowed === "Points") return pointsState.stats;
 					else if (statToBeShowed === "Goals") return goalsState.stats;
+					else if (statToBeShowed === "Assist") return assistState.stats;
 					else
 						return [
 							{

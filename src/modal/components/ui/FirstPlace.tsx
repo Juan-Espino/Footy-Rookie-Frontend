@@ -68,7 +68,7 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 					{/* this section changes alot depending on player or team statistic */}
 					<div
 						id="club-wrapper"
-						className=" text-3xl flex gap-4 items-center relative"
+						className=" text-3xl flex gap-4 items-center relative justify-center"
 					>
 						<p className="font-nunito font-bold">
 							{statsObject[0].player_img

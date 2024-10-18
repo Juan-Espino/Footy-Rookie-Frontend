@@ -39,13 +39,18 @@ export const useHttpClient = () => {
 	const [loading, setLoading] = useState(false);
 	//state of which is determined if an http request failed or not
 	const [error, setError] = useState(false);
-	//states for holding an array of statistic objects returned from api calls
+	//states for holding an array of point statistic objects returned from api calls
 	const [pointsState, setPointsState] = useState<StatStateStructure>({
 		stats: DefaultStatObjectArray,
 		loaded: false,
 	});
-	//states for holding an array of statistic objects returned from api calls
+	//states for holding an array of goal statistic objects returned from api calls
 	const [goalsState, setGoalsState] = useState<StatStateStructure>({
+		stats: DefaultStatObjectArray,
+		loaded: false,
+	});
+	//states for holding an array of assist statistic objects returned from api calls
+	const [assistState, setAssistState] = useState<StatStateStructure>({
 		stats: DefaultStatObjectArray,
 		loaded: false,
 	});
@@ -73,7 +78,8 @@ export const useHttpClient = () => {
 		// )
 		if (
 			(statToBeShowed === "Points" && pointsState.loaded) ||
-			(statToBeShowed === "Goals" && goalsState.loaded)
+			(statToBeShowed === "Goals" && goalsState.loaded) ||
+			(statToBeShowed === "Assist" && assistState.loaded)
 		) {
 			return;
 		} else {
@@ -111,6 +117,15 @@ export const useHttpClient = () => {
 						};
 						return data;
 					});
+				} else if (statToBeShowed === "Assist") {
+					setAssistState((previousState) => {
+						const data = {
+							...previousState,
+							stats: responseData,
+							loaded: true,
+						};
+						return data;
+					});
 				}
 			} catch (error: any) {
 				setError(error.message);
@@ -127,5 +142,13 @@ export const useHttpClient = () => {
 	const clearError = () => {
 		setError(false);
 	};
-	return { loading, error, clearError, sendRequest, pointsState, goalsState };
+	return {
+		loading,
+		error,
+		clearError,
+		sendRequest,
+		pointsState,
+		goalsState,
+		assistState,
+	};
 };
