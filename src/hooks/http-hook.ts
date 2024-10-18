@@ -60,6 +60,11 @@ export const useHttpClient = () => {
 		stats: DefaultStatObjectArray,
 		loaded: false,
 	});
+	//states for holding an array of reds statistic objects returned from api calls
+	const [redsState, setRedsState] = useState<StatStateStructure>({
+		stats: DefaultStatObjectArray,
+		loaded: false,
+	});
 
 	/*
   Handler function for sending http request to the api
@@ -86,7 +91,8 @@ export const useHttpClient = () => {
 			(statToBeShowed === "Points" && pointsState.loaded) ||
 			(statToBeShowed === "Goals" && goalsState.loaded) ||
 			(statToBeShowed === "Assist" && assistState.loaded) ||
-			(statToBeShowed === "CleanSheets" && cleanSheetsState.loaded)
+			(statToBeShowed === "CleanSheets" && cleanSheetsState.loaded) ||
+			(statToBeShowed === "Reds" && redsState.loaded)
 		) {
 			return;
 		} else {
@@ -141,6 +147,15 @@ export const useHttpClient = () => {
 						};
 						return data;
 					});
+				} else if (statToBeShowed === "Reds") {
+					setRedsState((previousState) => {
+						const data = {
+							...previousState,
+							stats: responseData,
+							loaded: true,
+						};
+						return data;
+					});
 				}
 			} catch (error) {
 				setError(true);
@@ -167,5 +182,6 @@ export const useHttpClient = () => {
 		goalsState,
 		assistState,
 		cleanSheetsState,
+		redsState,
 	};
 };
