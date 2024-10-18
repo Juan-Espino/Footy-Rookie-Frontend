@@ -11,6 +11,7 @@ type ModalProps = {
 	statObjectsArray?: () => StatObjectsArray;
 	loading: boolean;
 	error: boolean;
+	clearError: () => void;
 };
 
 const backdropVariants = {
@@ -26,13 +27,17 @@ const Modal = ({
 	statObjectsArray,
 	loading,
 	error,
+	clearError,
 }: ModalProps) => {
 	return (
 		<AnimatePresence mode="wait">
 			{showModal && (
 				<motion.div
 					id="modal-backdrop"
-					onClick={() => setShowModal(false)}
+					onClick={() => {
+						setShowModal(false);
+						clearError();
+					}}
 					variants={backdropVariants}
 					initial="hidden"
 					animate="visible"
@@ -45,9 +50,7 @@ const Modal = ({
 						className="rounded-3xl w-11/12 h-[65%] relative mx-auto max-w-7xl "
 					>
 						{loading && !error && <h1 className="text-matte-white">Loading</h1>}
-						{error && !loading && (
-							<h1 className="text-matte-white">Error {error}</h1>
-						)}
+						{error && !loading && <h1 className="text-matte-white">Error</h1>}
 						{!loading && !error && statObjectsArray && (
 							<Stats
 								statToBeShowed={statToBeShowed}

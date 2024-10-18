@@ -19,6 +19,7 @@ export type StatStateStructure = {
 	loaded: boolean;
 };
 
+//variable for statObjectArrays to not be undefined at any point
 const DefaultStatObjectArray = [
 	{
 		stat: "",
@@ -32,7 +33,7 @@ const DefaultStatObjectArray = [
 ];
 
 /*
-
+todo:document
 */
 export const useHttpClient = () => {
 	//state of when a http request is occuring
@@ -51,6 +52,11 @@ export const useHttpClient = () => {
 	});
 	//states for holding an array of assist statistic objects returned from api calls
 	const [assistState, setAssistState] = useState<StatStateStructure>({
+		stats: DefaultStatObjectArray,
+		loaded: false,
+	});
+	//states for holding an array of CleanSheets statistic objects returned from api calls
+	const [cleanSheetsState, setCleanSheetsState] = useState<StatStateStructure>({
 		stats: DefaultStatObjectArray,
 		loaded: false,
 	});
@@ -79,7 +85,8 @@ export const useHttpClient = () => {
 		if (
 			(statToBeShowed === "Points" && pointsState.loaded) ||
 			(statToBeShowed === "Goals" && goalsState.loaded) ||
-			(statToBeShowed === "Assist" && assistState.loaded)
+			(statToBeShowed === "Assist" && assistState.loaded) ||
+			(statToBeShowed === "CleanSheets" && cleanSheetsState.loaded)
 		) {
 			return;
 		} else {
@@ -91,11 +98,10 @@ export const useHttpClient = () => {
 					headers,
 				});
 
-				const responseData = await response.json();
-
-				if (!responseData) {
+				if (!response.ok) {
 					throw new Error("Loading data failed, Please try again");
 				}
+				const responseData = await response.json();
 
 				// todo: make this section for every possible statToBeShowed
 				//Set value of desired stat to response data based on statToBeShowed
@@ -126,9 +132,19 @@ export const useHttpClient = () => {
 						};
 						return data;
 					});
+				} else if (statToBeShowed === "CleanSheets") {
+					setCleanSheetsState((previousState) => {
+						const data = {
+							...previousState,
+							stats: responseData,
+							loaded: true,
+						};
+						return data;
+					});
 				}
-			} catch (error: any) {
-				setError(error.message);
+			} catch (error) {
+				setError(true);
+				console.log(error);
 			}
 			setLoading(false);
 		}
@@ -150,5 +166,6 @@ export const useHttpClient = () => {
 		pointsState,
 		goalsState,
 		assistState,
+		cleanSheetsState,
 	};
 };

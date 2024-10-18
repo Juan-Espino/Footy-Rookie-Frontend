@@ -32,6 +32,7 @@ function App() {
 		pointsState,
 		goalsState,
 		assistState,
+		cleanSheetsState,
 	} = useHttpClient();
 
 	useEffect(() => {
@@ -56,6 +57,8 @@ function App() {
 					if (statToBeShowed === "Points") return pointsState.stats;
 					else if (statToBeShowed === "Goals") return goalsState.stats;
 					else if (statToBeShowed === "Assist") return assistState.stats;
+					else if (statToBeShowed === "CleanSheets")
+						return cleanSheetsState.stats;
 					else
 						return [
 							{
@@ -71,6 +74,7 @@ function App() {
 				}}
 				loading={loading}
 				error={error}
+				clearError={clearError}
 			/>
 
 			{/* section for all Carousel related ui */}
