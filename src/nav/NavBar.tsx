@@ -22,14 +22,14 @@ const NavBar = ({ setShowModal, setStatToBeShowed }: NavBarProps) => {
 	];
 
 	return (
-		<nav className="flex justify-around h-16 items-center">
+		<nav className="flex justify-around h-16 items-center md:text-lg lg:text-2xl">
 			<div className="py-1.5 px-4 rounded-full bg-mastercard dark:bg-moonlit-asteroid transition-all ease-in-out duration-300 hover:scale-110 cursor-pointer">
-				<h1 className="font-marker text-matte-white text-2xl font-extrabold ">
+				<h1 className="font-marker text-matte-white font-extrabold ">
 					Footy<span className="">Rookie</span>
 				</h1>
 			</div>
 
-			<ul className="font-marker flex justify-center gap-4 text-2xl text-matte-white">
+			<ul className="font-marker flex justify-center gap-4 text-matte-white">
 				{navLinksText.map((item, key) => (
 					<li
 						onClick={() => handleLinkClick(item)}
