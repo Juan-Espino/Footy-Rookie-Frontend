@@ -39,7 +39,7 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 				{/* player/team name */}
 				<h2
 					id="name"
-					className="font-marker text-4xl p-4 bg-mastercard dark:bg-moonlit-asteroid rounded-xl  font-bold text-matte-white mb-4"
+					className="font-marker text-4xl p-4 bg-shifter dark:bg-moonlit-asteroid rounded-xl  font-bold text-matte-white mb-4"
 				>
 					{statsObject[0].player_name
 						? statsObject[0].player_name
@@ -52,15 +52,20 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 								{"Clean Sheets"} : &nbsp;{" "}
 							</p>
 						)}
+						{statToBeShowed !== "CleanSheets" && (
+							<p className="font-nunito font-bold">
+								{statToBeShowed} : &nbsp;{" "}
+							</p>
+						)}
 
-						<p className=" text-orange-500 dark:text-cyan-300  font-bold">
+						<p className=" text-prem-pink dark:text-cyan-300  font-bold">
 							{statsObject[0].stat}
 						</p>
 					</div>
 					{/* this section changes alot depending on player or team statistic */}
 					<div
 						id="club-wrapper"
-						className=" text-3xl flex gap-4 items-center relative"
+						className=" text-3xl flex gap-4 items-center relative justify-center"
 					>
 						<p className="font-nunito font-bold">
 							{statsObject[0].player_img

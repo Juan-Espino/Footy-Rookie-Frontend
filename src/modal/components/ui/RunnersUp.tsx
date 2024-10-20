@@ -40,7 +40,7 @@ const RunnersUp = ({ statsObjectArray }: RunnersUpProps) => {
 						// if index is 8 (meaning its the last element) & screen sizes is less than xl make the element span both columns (< xl screen mean only 2 columns)
 						<li
 							key={index}
-							className={`md: size-32 lg:size-40 xl:size-40 2xl:size-44 relative rounded-2xl xl:col-span-1 + ${
+							className={`md: size-32 lg:size-40 xl:size-40 2xl:size-48 relative rounded-2xl xl:col-span-1 + ${
 								index === 8 ? "col-span-2" : ""
 							}`}
 							style={{
@@ -81,7 +81,7 @@ const RunnersUp = ({ statsObjectArray }: RunnersUpProps) => {
 										alt="flag"
 										className="md:size-6 lg:size-9 rounded-full self-end"
 									/>
-									<p className="md:text-4xl lg:text-5xl font-bold leading-9 text-matte-white dark:text-teal-300">
+									<p className="md:text-4xl lg:text-5xl font-bold leading-9 text-prem-pink dark:text-teal-300">
 										{statsObject.stat}
 									</p>
 								</div>
@@ -90,9 +90,9 @@ const RunnersUp = ({ statsObjectArray }: RunnersUpProps) => {
 									<img
 										src={england}
 										alt="flag"
-										className="self-end md:size-6 lg:size-9 rounded-full"
+										className="self-end md:size-6 lg:size-12 rounded-full lg:p-1"
 									/>
-									<p className="self-end md:text-4xl lg:text-5xl font-bold leading-9 text-matte-white dark:text-teal-300">
+									<p className="self-end md:text-4xl lg:text-5xl font-bold leading-9 text-prem-pink dark:text-teal-300">
 										{statsObject.stat}
 									</p>
 								</div>

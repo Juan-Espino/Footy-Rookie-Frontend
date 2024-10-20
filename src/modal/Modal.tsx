@@ -2,6 +2,8 @@ import { motion, AnimatePresence, easeOut } from "framer-motion";
 
 import type { StatObjectsArray } from "../hooks/http-hook";
 import Stats from "./components/Stats";
+import BouncingBall from "./components/ui/BouncingBall";
+import Error from "./components/ui/Error";
 
 type ModalProps = {
 	showModal: boolean;
@@ -49,8 +51,9 @@ const Modal = ({
 						onClick={(e) => e.stopPropagation()}
 						className="rounded-3xl w-11/12 h-[65%] relative mx-auto max-w-7xl "
 					>
-						{loading && !error && <h1 className="text-matte-white">Loading</h1>}
-						{error && !loading && <h1 className="text-matte-white">Error</h1>}
+						{/* todo: customize loading && errors */}
+						{loading && !error && <BouncingBall />}
+						{error && !loading && <Error />}
 						{!loading && !error && statObjectsArray && (
 							<Stats
 								statToBeShowed={statToBeShowed}

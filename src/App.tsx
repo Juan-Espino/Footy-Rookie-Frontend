@@ -37,6 +37,8 @@ function App() {
 		yellowsState,
 	} = useHttpClient();
 
+	//everytime statToBeShowed is alter (navbar link  or carousel item clicked)
+	//trigger sendRequest(params)
 	useEffect(() => {
 		if (statToBeShowed)
 			sendRequest(
@@ -55,6 +57,8 @@ function App() {
 				showModal={showModal}
 				setShowModal={setShowModal}
 				statToBeShowed={statToBeShowed}
+				//deterimine which stats to send to modal depending on current
+				//statToBeShowed
 				statObjectsArray={() => {
 					if (statToBeShowed === "Points") return pointsState.stats;
 					else if (statToBeShowed === "Goals") return goalsState.stats;

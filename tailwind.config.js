@@ -27,16 +27,31 @@ export default {
 				"moonlit-asteroid":
 					"linear-gradient(to right, #0f2027, #203a43, #2c5364)",
 				mastercard: "linear-gradient(to right, #f46b45, #eea849)",
+				shifter: "linear-gradient(to left, #bc4e9c, #f80759)",
 				deepSpace:
 					"radial-gradient(at 60% bottom , rgb(15, 18, 25) , rgb(255, 0, 90));",
 				kyoto: "linear-gradient(to left, #c21500, #ffc500);",
 				darken: "linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) )",
 			},
+
 			animationDelay: {
 				10000: "10000ms",
 				"-10000": "-10000ms",
 
 				"-15000": "-15000ms",
+			},
+			keyframes: {
+				bounce: {
+					"0% , 100%": {
+						transform: "translateY(-300%)",
+						"animation-timing-function": "cubic-bezier(0.8,0,1,1)",
+					},
+
+					"50%": {
+						transform: "none",
+						"animation-timing-function": "cubic-bezier(0,0,0.2,1)",
+					},
+				},
 			},
 		},
 	},
