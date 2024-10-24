@@ -22,7 +22,7 @@ const CarouselWrapper = ({ setStatToBeShowed, setShowModal }: CarouseProps) => {
 			{/* todo:map every item [img,delay*arbitray value] */}
 
 			<li
-				className={`${styles.counterrotate} absolute block h-[25rem] w-[12.5rem] top-0 right-0 overflow-hidden`}
+				className={`${styles.counterrotate} absolute block h-[25rem] w-[12.5rem] top-0 right-0`}
 			>
 				<CarouselItem
 					setShowModal={setShowModal}
