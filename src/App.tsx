@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import { useHttpClient } from "./hooks/http-hook";
-import CarouselWrapper from "./carousel/CarouselWrapper";
 import NavBar from "./nav/NavBar";
 import Footer from "./footer/Footer";
 import Modal from "./modal/Modal";
@@ -86,7 +85,7 @@ function App() {
 			/>
 
 			{/* section for all Carousel related ui */}
-			<section
+			{/* <section
 				id="hero"
 				className="max-w-screen-2xl mx-auto  md:my-[35vh] xl:my-[30vh]"
 			>
@@ -96,7 +95,7 @@ function App() {
 						setShowModal={setShowModal}
 					/>
 				</div>
-			</section>
+			</section> */}
 			<Footer />
 		</main>
 	);

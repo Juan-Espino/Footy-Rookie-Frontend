@@ -1,10 +1,15 @@
+import { useState } from "react";
 import DarkMode from "./components/DarkMode";
+import NavLinks from "./components/NavLinks";
+import HambugerMenu from "./components/HambugerMenu";
 
 type NavBarProps = {
 	setShowModal: (state: boolean) => void;
 	setStatToBeShowed: (state: string) => void;
 };
 const NavBar = ({ setShowModal, setStatToBeShowed }: NavBarProps) => {
+	// hamburger menu state
+	const [isOpen, setIsOpen] = useState(false);
 	// if a nav item is clicked, open modal, set statToShow to target
 	const handleLinkClick = (statToBeShowed: string) => {
 		setShowModal(true);
@@ -21,29 +26,38 @@ const NavBar = ({ setShowModal, setStatToBeShowed }: NavBarProps) => {
 		"Reds",
 	];
 
+	const lineProps = {
+		strokeWidth: 4,
+	};
+
 	return (
 		<nav className="flex justify-around h-16 items-center md:text-lg lg:text-2xl">
+			<div id="hambuger-menu" className="inline md:hidden p-4">
+				<HambugerMenu
+					isOpen={isOpen}
+					onClick={() => setIsOpen(!isOpen)}
+					lineProps={lineProps}
+				/>
+				{/* <div>
+					<NavLinks
+						navLinksText={navLinksText}
+						handleLinkClick={handleLinkClick}
+					/>
+				</div> */}
+			</div>
+
 			<div className="py-1.5 px-4 rounded-full bg-mastercard dark:bg-moonlit-asteroid transition-all ease-in-out duration-300 hover:scale-110 cursor-pointer">
 				<h1 className="font-marker text-matte-white font-extrabold ">
 					Footy<span className="">Rookie</span>
 				</h1>
 			</div>
+			<div className="hidden md:inline">
+				<NavLinks
+					navLinksText={navLinksText}
+					handleLinkClick={handleLinkClick}
+				/>
+			</div>
 
-			<ul className="font-marker flex justify-center gap-4 text-matte-white">
-				{navLinksText.map((item, key) => (
-					<li
-						onClick={() => handleLinkClick(item)}
-						className={`px-1 py-2 cursor-pointer transition-all ease-in-out duration-100 hover:scale-110 active:scale-100 hover:text-black hover:dark:text-cyan-300 ${
-							item == "Yellows"
-								? "hover:text-yellow-300 hover:dark:text-yellow-300"
-								: ""
-						} ${item == "Reds" ? "hover:dark:text-red-500" : ""}`}
-						key={key}
-					>
-						{item}
-					</li>
-				))}
-			</ul>
 			<DarkMode />
 		</nav>
 	);
