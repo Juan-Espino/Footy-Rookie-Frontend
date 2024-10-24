@@ -88,7 +88,10 @@ function App() {
 			{/* section for all Carousel related ui */}
 			<section id="hero" className="max-w-screen-2xl mx-auto my-[30vh]">
 				<div className="m-auto w-[200px] h-[200px] rounded-[50%] scale-x-[3] ">
-					<CarouselWrapper />
+					<CarouselWrapper
+						setStatToBeShowed={setStatToBeShowed}
+						setShowModal={setShowModal}
+					/>
 				</div>
 			</section>
 			<Footer />
