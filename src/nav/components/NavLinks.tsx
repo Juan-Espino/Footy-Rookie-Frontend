@@ -5,7 +5,7 @@ type NavLinksProps = {
 const NavLinks = ({ navLinksText, handleLinkClick }: NavLinksProps) => {
 	return (
 		<ul
-			className={`flex flex-col md:flex-row justify-center gap-4 font-marker  text-matte-white`}
+			className={`flex flex-col items-center h-full my-auto md:flex-row justify-center gap-4 font-marker  text-matte-white`}
 		>
 			{navLinksText.map((item, key) => (
 				<li

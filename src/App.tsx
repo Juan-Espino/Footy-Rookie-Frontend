@@ -4,6 +4,7 @@ import { useHttpClient } from "./hooks/http-hook";
 import NavBar from "./nav/NavBar";
 import Footer from "./footer/Footer";
 import Modal from "./modal/Modal";
+import CarouselWrapper from "./carousel/CarouselWrapper";
 
 function App() {
 	//state for showing the modal
@@ -85,17 +86,17 @@ function App() {
 			/>
 
 			{/* section for all Carousel related ui */}
-			{/* <section
+			<section
 				id="hero"
-				className="max-w-screen-2xl mx-auto  md:my-[35vh] xl:my-[30vh]"
+				className="max-w-screen-2xl mx-auto my-[50vh]  md:my-[35vh] xl:my-[30vh]"
 			>
-				<div className="m-auto md:w-[150px] md:h-[150px]  lg:w-[200px] lg:h-[200px] rounded-[50%] scale-x-[3] ">
+				<div className="m-auto w-[200] h-[200] md:w-[150px] md:h-[150px]  lg:w-[200px] lg:h-[200px] rounded-[50%] scale-x-[3] ">
 					<CarouselWrapper
 						setStatToBeShowed={setStatToBeShowed}
 						setShowModal={setShowModal}
 					/>
 				</div>
-			</section> */}
+			</section>
 			<Footer />
 		</main>
 	);
