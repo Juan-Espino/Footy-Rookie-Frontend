@@ -10,7 +10,7 @@ const DarkMode = () => {
 		}
 	};
 	return (
-		<div className="">
+		<div className="pt-2">
 			<label className="inline-block h-8 w-16 relative ">
 				<input
 					type="checkbox"

@@ -48,7 +48,7 @@ function App() {
 	}, [statToBeShowed]);
 
 	return (
-		<main>
+		<main className="md:overflow-hidden">
 			<NavBar
 				setShowModal={setShowModal}
 				setStatToBeShowed={setStatToBeShowed}
@@ -86,8 +86,11 @@ function App() {
 			/>
 
 			{/* section for all Carousel related ui */}
-			<section id="hero" className="max-w-screen-2xl mx-auto my-[30vh]">
-				<div className="m-auto w-[200px] h-[200px] rounded-[50%] scale-x-[3] ">
+			<section
+				id="hero"
+				className="max-w-screen-2xl mx-auto  md:my-[35vh] xl:my-[30vh]"
+			>
+				<div className="m-auto md:w-[150px] md:h-[150px]  lg:w-[200px] lg:h-[200px] rounded-[50%] scale-x-[3] ">
 					<CarouselWrapper
 						setStatToBeShowed={setStatToBeShowed}
 						setShowModal={setShowModal}
