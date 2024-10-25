@@ -84,11 +84,11 @@ const RunnersUp = ({ statsObjectArray }: RunnersUpProps) => {
 									</p>
 								</div>
 							) : (
-								<div className="absolute w-full right-0 bottom-0 flex md:gap-2 lg:gap-4 justify-between">
+								<div className="absolute w-full right-0 bottom-0 flex gap-2 md:gap-2 lg:gap-4 justify-end md:justify-between">
 									<img
 										src={england}
 										alt="flag"
-										className="self-end md:size-6 lg:size-12 rounded-full lg:p-1"
+										className="self-center size-3 md:size-6 lg:size-12 rounded-full lg:p-1"
 									/>
 									<p className="self-end md:text-4xl lg:text-5xl font-bold leading-9 text-prem-pink dark:text-teal-300">
 										{statsObject.stat}
