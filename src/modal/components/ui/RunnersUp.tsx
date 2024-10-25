@@ -31,6 +31,7 @@ const RunnersUp = ({ statsObjectArray }: RunnersUpProps) => {
 				*/}
 				{statsObjectArray
 					.filter((statsObject, index) => {
+						statsObject;
 						if (index === 0) return false;
 						else return true;
 					})
