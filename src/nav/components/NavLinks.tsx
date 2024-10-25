@@ -14,7 +14,9 @@ const NavLinks = ({ navLinksText, handleLinkClick }: NavLinksProps) => {
 						item == "Yellows"
 							? "hover:text-yellow-300 hover:dark:text-yellow-300"
 							: ""
-					} ${item == "Reds" ? "hover:dark:text-red-500" : ""}`}
+					} ${
+						item == "Reds" ? "hover:text-red-500 hover:dark:text-red-500" : ""
+					}`}
 					key={key}
 				>
 					{item}

@@ -29,7 +29,7 @@ const NavBar = ({ setShowModal, setStatToBeShowed }: NavBarProps) => {
 	];
 
 	return (
-		<nav className="flex justify-around h-16 items-center md:text-lg lg:text-2xl">
+		<nav className="flex justify-around h-16 items-center md:text-lg lg:text-2xl bg-neuromancer  dark:bg-none">
 			<div id="hambuger-menu" className="inline md:hidden p-4">
 				<HambugerMenu
 					isOpen={isOpen}

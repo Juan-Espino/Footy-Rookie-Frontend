@@ -28,6 +28,7 @@ export default {
 					"linear-gradient(to right, #0f2027, #203a43, #2c5364)",
 				mastercard: "linear-gradient(to right, #f46b45, #eea849)",
 				shifter: "linear-gradient(to left, #bc4e9c, #f80759)",
+				neuromancer: "linear-gradient(to top, #ff005a, #b2003f)",
 				deepSpace:
 					"radial-gradient(at 60% bottom , rgb(15, 18, 25) , rgb(255, 0, 90));",
 				kyoto: "linear-gradient(to left, #c21500, #ffc500);",
