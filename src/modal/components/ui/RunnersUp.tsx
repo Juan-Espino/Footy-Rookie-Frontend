@@ -97,7 +97,7 @@ const RunnersUp = ({ statsObjectArray }: RunnersUpProps) => {
 							)}
 
 							{/* ranking position based on index in statsObjectArray */}
-							<p className="absolute bottom-0 left-0 md:top-0 md:right-0 font-bold text-matte-white">
+							<p className="absolute bottom-0 left-0 md:left-auto md:top-0  md:right-0 font-bold text-matte-white">
 								{`#${index + 2}`}
 							</p>
 						</li>
