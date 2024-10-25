@@ -21,7 +21,7 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 			initial="hidden"
 			animate="visible"
 			exit="exit"
-			className="w-6/12 p-6 rounded-3xl  backdrop-blur-xl  flex flex-col items-center justify-center "
+			className="w-full md:w-6/12 p-6 rounded-3xl  backdrop-blur-xl  flex flex-col items-center justify-center "
 		>
 			<img
 				src={
@@ -30,7 +30,7 @@ const FirstPlace = ({ statsObject, statToBeShowed }: FirstPlaceProps) => {
 						: statsObject[0].club_badge
 				}
 				alt="first-place"
-				className=" pb-4 md:size-72 2xl:size-96 2xl:pb-8"
+				className="hidden md:inline pb-4 md:size-72 2xl:size-96 2xl:pb-8"
 			/>
 			<section
 				id="first-place-stats"

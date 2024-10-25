@@ -8,7 +8,7 @@ type StatsProps = {
 };
 const Stats = ({ statToBeShowed, statObjectsArray }: StatsProps) => {
 	return (
-		<div id="first-runnersUp" className="h-full flex ">
+		<div id="first-runnersUp" className="h-full flex flex-col md:flex-row ">
 			{/* modal is broken into two sections */}
 			<FirstPlace
 				statsObject={statObjectsArray}
