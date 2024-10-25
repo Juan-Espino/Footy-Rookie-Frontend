@@ -33,8 +33,23 @@ const DefaultStatObjectArray = [
 ];
 
 /*
-todo:document
+	Handler hook for sending http request to the api with its inner function sendRequest()
+	& setting the state of every stat the application shows
+	& setting the error state with in the fetch request as well as clearing error with clearError();
+	& setting loading state while fetch & after fetch occurs
+
+  @return {string} loading state that indicates when and when not fetching from api
+	@return {string} error state that indicates when and error has occured while fetching from api
+	@return {function} sendRequest Handler function for sending http request to the api
+	@return {object} pointsState object that holds default stats, loaded, key value pairs or loaded key value pairs from api
+	@return {object} pointsState object that holds default stats, loaded, key value pairs or loaded key value pairs from api
+	@return {object} goalsState object that holds default stats, loaded, key value pairs or loaded key value pairs from api
+	@return {object} assistState object that holds default stats, loaded, key value pairs or loaded key value pairs from api
+	@return {object} cleanSheetsState object that holds default stats, loaded, key value pairs or loaded key value pairs from api
+	@return {object} redsState object that holds default stats, loaded, key value pairs or loaded key value pairs from api
+	@return {object} yellowsState object that holds default stats, loaded, key value pairs or loaded key value pairs from api
 */
+
 export const useHttpClient = () => {
 	//state of when a http request is occuring
 	const [loading, setLoading] = useState(false);
@@ -110,7 +125,6 @@ export const useHttpClient = () => {
 				}
 				const responseData = await response.json();
 
-				// todo: make this section for every possible statToBeShowed
 				//Set value of desired stat to response data based on statToBeShowed
 				if (statToBeShowed === "Points") {
 					setPointsState((previousState) => {

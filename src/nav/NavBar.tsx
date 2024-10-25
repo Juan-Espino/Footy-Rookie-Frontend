@@ -43,7 +43,7 @@ const NavBar = ({ setShowModal, setStatToBeShowed }: NavBarProps) => {
 				/>
 			</div>
 
-			<div className="py-1.5 px-4 rounded-full bg-mastercard dark:bg-moonlit-asteroid transition-all ease-in-out duration-300 hover:scale-110 cursor-pointer">
+			<div className="py-1.5 px-4 rounded-full bg-shifter shadow-xl  dark:bg-moonlit-asteroid transition-all ease-in-out duration-300 hover:scale-110 cursor-pointer">
 				<h1 className="font-marker text-matte-white font-extrabold ">
 					Footy<span className="">Rookie</span>
 				</h1>
