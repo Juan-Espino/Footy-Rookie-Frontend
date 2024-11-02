@@ -10,7 +10,7 @@
 <h3 align="center">FootyRookie</h3>
 
   <p align="center">
-    All of the most important statistics of the beautiful game and it's most presitge league of them all, The Premier League. No more searching for who's the top goal scorer or who has been yellow carded the most, it's all here! Designed for speed and elegance, nothing but the important stats all in one place.
+    All of the most important statistics of the beautiful game and it's most prestige league of them all, The Premier League. No more searching for who's the top goal scorer or who has been yellow carded the most, it's all here! Designed for speed and elegance, nothing but the important stats all in one place.
     <br />
     <a href="https://github.com/Juan-Espino/Footy-Rookie-Frontend"><strong>Explore the docs »</strong></a>
     <br />
